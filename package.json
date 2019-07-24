@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/xe-ui.css",
+  "files": [
+    "/scss",
+    "/js",
+    "/dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "gulp watch",

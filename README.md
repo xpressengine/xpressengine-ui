@@ -1,1 +1,1 @@
-# xpressengine-ui
+# @xpressengine/ui

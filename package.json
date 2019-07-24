@@ -1,0 +1,40 @@
+{
+  "name": "@xpressengine/ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/xe-ui.css",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch",
+    "build": "NODE_ENV=production gulp build "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpressengine/xpressengine-ui.git"
+  },
+  "author": "XEHub",
+  "license": "LGPL-2.1-or-later",
+  "bugs": {
+    "url": "https://github.com/xpressengine/xpressengine-ui/issues"
+  },
+  "homepage": "https://github.com/xpressengine/xpressengine-ui#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "eslint-config-standard": "^13.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-if": "^3.0.0",
+    "gulp-load-plugins": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^9.0.0",
+    "minimist": "^1.2.0",
+    "node-sass": "^4.12.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.9.2"
+  }
+}

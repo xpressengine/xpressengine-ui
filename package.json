@@ -30,6 +30,7 @@
     "eslint-config-standard": "^13.0.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
+    "gulp-header": "^2.0.9",
     "gulp-if": "^3.0.0",
     "gulp-load-plugins": "^2.0.0",
     "gulp-sass": "^4.0.2",
@@ -41,5 +42,8 @@
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-scss": "^3.9.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

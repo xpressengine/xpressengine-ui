@@ -1,3 +1,13 @@
 body {
-  background-color: $bg-color;
+  color: $text-color;
+  background-color: $body-bg;
+}
+
+a {
+  color: $link-color;
+
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+  }
 }

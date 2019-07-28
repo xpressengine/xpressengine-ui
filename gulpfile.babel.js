@@ -60,10 +60,25 @@ const taskFixSass = function () {
 taskFixSass.displayName = 'lint:fix-sass'
 taskFixSass.description = '.scss 자동 교정'
 
+const taskPosthtml = function () {
+  const options = {
+    root: './html'
+  }
+  const plugins = [
+    require('posthtml-extend')(options)
+  ]
+
+  return src(['html/*.html', '!**/_*.html', ...ignore])
+    .pipe($.posthtml(plugins))
+    .pipe(dest('dist/preview'))
+}
+taskPosthtml.displayName = 'posthtml'
+
 const watchFiles = function () {
   watch(['scss/*.scss', ...ignore], series(taskLintSass, taskSass))
+  watch(['scss/*.html', ...ignore], series(taskPosthtml))
 }
-const taskWatch = series(taskFixSass, taskSass, watchFiles)
+const taskWatch = series(taskFixSass, taskSass, taskPosthtml, watchFiles)
 taskWatch.displayName = 'watch'
 
 const taskBuild = series(taskSass)
@@ -79,5 +94,7 @@ task('lint', series(taskLintSass))
 task(taskLintSass)
 task(taskFixSass)
 task(taskSass)
+
+task(taskPosthtml)
 
 task(taskWatch)

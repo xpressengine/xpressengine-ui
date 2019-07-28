@@ -87,7 +87,7 @@ taskBuild.flags = {
   '-p': 'Production mode (minify)'
 }
 
-task('default', series(taskSass))
+task('default', parallel(taskSass, taskPosthtml))
 task(taskBuild)
 
 task('lint', series(taskLintSass))

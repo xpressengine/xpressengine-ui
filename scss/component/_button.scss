@@ -96,11 +96,14 @@
     }
 
     // 배경색 있는 버튼일 때 아이콘 이미지를 흰색으로 적용 (primary, warning, danger, selected)
-    &.#{$prefix}-button--primary, &.#{$prefix}-button--warning, &.#{$prefix}-button--danger, &.#{$prefix}-button--selected {
+    &.#{$prefix}-button--primary,
+    &.#{$prefix}-button--warning,
+    &.#{$prefix}-button--danger,
+    &.#{$prefix}-button--selected {
       .#{$prefix}-button__icon--pen {
         background-image: url(../image/icon-pen-white.svg);
       }
-  
+
       .#{$prefix}-button__icon--trash {
         background-image: url(../image/icon-trash-white.svg);
       }

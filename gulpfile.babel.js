@@ -21,7 +21,7 @@ if (process.env.SOURCEMAPS === 'true' || process.env.SOURCEMAPS === '1') {
 const taskSass = function () {
   generateSourceMaps = (mode !== 'production' && !argv.p)
 
-  return src(['scss/*.scss', ...ignore])
+  return src(['scss/**/*.scss', ...ignore])
     .pipe($.if(generateSourceMaps, $.sourcemaps.init()))
     .pipe($.sass({
       // outputStyle: 'compressed',
@@ -37,6 +37,26 @@ const taskSass = function () {
 }
 taskSass.displayName = 'sass'
 taskSass.description = 'SASS'
+
+const taskSassPreview = function () {
+  generateSourceMaps = (mode !== 'production' && !argv.p)
+
+  return src(['dist/preview/scss/**/*.scss', ...ignore])
+    .pipe($.if(generateSourceMaps, $.sourcemaps.init()))
+    .pipe($.sass({
+      // outputStyle: 'compressed',
+      outputStyle: 'expanded',
+      includePaths: ['node_modules']
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      cascade: false
+    }))
+    .pipe($.if(generateSourceMaps, $.sourcemaps.write()))
+    .pipe($.header(banner))
+    .pipe(dest('dist/preview/css'))
+}
+taskSass.displayName = 'sassPreview'
+taskSass.description = 'SASS Preview'
 
 const taskLintSass = function () {
   return src(['scss/**/*.scss', ...ignore])
@@ -79,9 +99,10 @@ taskPosthtml.displayName = 'posthtml'
 
 const watchFiles = function () {
   watch(['scss/**/*.scss', ...ignore], series(taskLintSass, taskSass))
+  watch(['dist/preview/scss/**/*.scss', ...ignore], series(taskLintSass, taskSassPreview))
   watch(['html/**/*.html', ...ignore], series(taskPosthtml))
 }
-const taskWatch = series(taskFixSass, taskSass, taskPosthtml, watchFiles)
+const taskWatch = series(taskFixSass, taskSass, taskSassPreview, taskPosthtml, watchFiles)
 taskWatch.displayName = 'watch'
 
 const taskBuild = series(taskSass)

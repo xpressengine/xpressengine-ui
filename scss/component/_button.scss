@@ -1,0 +1,165 @@
+.#{$prefix}-button {
+  display: inline-block;
+  margin: 0;
+  padding: 0 12px;
+  border: 0 none;
+  border-radius: 3px;
+  // border: 1px solid transparent;
+  font-size: 14px;
+  line-height: 36px;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  // white-space: nowrap;
+  outline: 0;
+  background-color: $transparent;
+  color: $N400;
+
+  // 공통 적용
+  &:not([disabled]) {
+    cursor: pointer;
+  }
+
+  // 공통 적용
+  &:focus:not([disabled]),
+  &.focus:not([disabled]) {
+    box-shadow: 0 0 0 2px rgba($B400, 0.4);
+  }
+
+  // 사이즈
+  &--large {
+    font-size: 16px;
+    line-height: 48px;
+  }
+
+  &--small {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  // block 일 때
+  &--block {
+    display: block;
+    width: 100%;
+
+    & + .xu-button--block {
+      margin-top: 4px;
+    }
+  }
+
+  // disabled
+  &--link,
+  &--subtle-link {
+    &:hover:not([disabled]),
+    &.hover:not([disabled]),
+    &:focus:not([disabled]),
+    &.focus:not([disabled]) {
+      text-decoration: underline;
+      border: 0 none;
+    }
+  }
+
+  // a 태그가 disabled 적용 될 때
+  &.disabled {
+    pointer-events: none;
+  }
+
+  // 이미지(아이콘) 버튼
+  &.#{$prefix}-button--icon {
+    height: 36px;
+    line-height: 36px;
+    padding: 8px;
+    border-radius: 3px;
+    // background-color: $transparent;
+
+    &:hover {
+      background-color: $N20;
+    }
+
+    .#{$prefix}-button__icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      vertical-align: top;
+    }
+
+    .#{$prefix}-button__icon--pen {
+      background-image: url(../image/icon-pen.svg);
+    }
+
+    .#{$prefix}-button__icon--trash {
+      background-image: url(../image/icon-trash.svg);
+    }
+
+    // 배경색 있는 버튼일 때 아이콘 이미지를 흰색으로 적용 (primary, warning, danger, selected)
+    &.#{$prefix}-button--primary, &.#{$prefix}-button--warning, &.#{$prefix}-button--danger, &.#{$prefix}-button--selected {
+      .#{$prefix}-button__icon--pen {
+        background-image: url(../image/icon-pen-white.svg);
+      }
+  
+      .#{$prefix}-button__icon--trash {
+        background-image: url(../image/icon-trash-white.svg);
+      }
+    }
+  }
+}
+
+// button-Colors
+@each $type, $value in $button-colors {
+  .#{$prefix}-button {
+    &--#{$type} {
+      outline: 0;
+      background-color: button-color($type, 'defaultBackgroundColor');
+      color: button-color($type, 'defaultColor');
+      // @if ($type == 'link') or ($type == 'subtle-link') {
+      //   text-decoration: underline;
+      //   border: 0 none;
+      // }
+
+      &:hover:not([disabled]),
+      &.hover:not([disabled]) {
+        @if ($type == 'link') or ($type == 'subtle-link') {
+          text-decoration: underline;
+          border: 0 none;
+        }
+
+        @else {
+          text-decoration: none;
+        }
+
+        background-color: button-color($type, 'hoverBackgroundColor');
+        // text-decoration: none;
+        color: button-color($type, 'defaultColor');
+      }
+
+      &:focus:not([disabled]),
+      &.focus:not([disabled]) {
+        background-color: button-color($type, 'focusBackgroundColor');
+        text-decoration: none;
+        color: button-color($type, 'defaultColor');
+      }
+
+      &:disabled,
+      &.disabled {
+        color: button-color($type, 'disabledColor');
+        background-color: button-color($type, 'disabledBackgroundColor');
+      }
+
+      &:active:not([disabled]),
+      &.active:not([disabled]) {
+        color: button-color($type, 'activeColor');
+        background-color: button-color($type, 'activeBackgroundColor');
+      }
+    }
+
+    // 선택한 상태일 때 각 버튼에서 class="xu-button--selected" 를 추가
+    &--#{$type}.#{$prefix}-button--selected {
+      background-color: $N700 !important;
+      color: $N0 !important;
+    }
+  }
+}

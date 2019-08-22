@@ -1,0 +1,90 @@
+body {
+  font-family: 'Noto Sans', 'Noto Sans KR', Arial, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Nanum Gothic", Dotum, '돋움', Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.xd-container {
+
+}
+
+.xd-snb {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.xd-snb-list {
+  li {
+    &.on {
+      a {
+        color: red;
+      }
+    }
+  }
+}
+
+.xd-content {
+  // padding-left: 12px;
+}
+
+.xd-title {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.xd-lead {
+  font-size: 1.35rem;
+  font-weight: 400;
+  word-break: keep-all;
+}
+
+.xd-content-title {
+  font-size: 2rem;
+}
+
+.xd-example {
+  position: relative;
+  padding: 1rem;
+  margin: 1rem -12px 0;
+  border: solid #f8f9fa;
+  border-width: 0.2rem 0 0;
+}
+
+.xd-code {
+  padding: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+
+  pre[class*="language-"] {
+    background-color: #f8f9fa;
+  }
+}
+
+// @include media-breakpoint-up('md') {
+
+@media (min-width: 992px) {
+  .xd-snb {
+    @supports (position: sticky) {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    height: 100vh;
+    border-right: 1px solid #e0e0e0;
+  }
+
+  .xd-content {
+    padding-left: 3rem;
+  }
+
+  .xd-example {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 0.2rem;
+  }
+}

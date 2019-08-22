@@ -24,7 +24,8 @@ const taskSass = function () {
   return src(['scss/*.scss', ...ignore])
     .pipe($.if(generateSourceMaps, $.sourcemaps.init()))
     .pipe($.sass({
-      outputStyle: 'compressed',
+      // outputStyle: 'compressed',
+      outputStyle: 'expanded',
       includePaths: ['node_modules']
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({
@@ -39,6 +40,7 @@ taskSass.description = 'SASS'
 
 const taskLintSass = function () {
   return src(['scss/**/*.scss', ...ignore])
+    .pipe($.plumber())
     .pipe($.stylelint({
       reporters: [
         { formatter: 'string', console: true }
@@ -49,6 +51,7 @@ taskLintSass.displayName = 'lint:sass'
 
 const taskFixSass = function () {
   return src(['scss/**/*.scss', ...ignore])
+    .pipe($.plumber())
     .pipe($.stylelint({
       fix: true,
       reporters: [
@@ -75,8 +78,8 @@ const taskPosthtml = function () {
 taskPosthtml.displayName = 'posthtml'
 
 const watchFiles = function () {
-  watch(['scss/*.scss', ...ignore], series(taskLintSass, taskSass))
-  watch(['scss/*.html', ...ignore], series(taskPosthtml))
+  watch(['scss/**/*.scss', ...ignore], series(taskLintSass, taskSass))
+  watch(['html/**/*.html', ...ignore], series(taskPosthtml))
 }
 const taskWatch = series(taskFixSass, taskSass, taskPosthtml, watchFiles)
 taskWatch.displayName = 'watch'

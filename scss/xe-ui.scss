@@ -1,5 +1,11 @@
 @import './variables';
 
 // base
-@import 'normalize.css/normalize';
+@import './normalize';
 @import './base';
+
+// mixin
+@import './mixin/functions';
+
+// component
+@import './component/button';

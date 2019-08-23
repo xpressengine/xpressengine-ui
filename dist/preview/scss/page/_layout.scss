@@ -6,15 +6,11 @@ body {
   line-height: 1.5;
 }
 
-.xd-container {
-
-}
-
-.xd-snb {
+.snb-wrap {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.xd-snb-list {
+.snb-list {
   li {
     &.on {
       a {
@@ -24,28 +20,28 @@ body {
   }
 }
 
-.xd-content {
+.content {
   // padding-left: 12px;
 }
 
-.xd-title {
+.title {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-weight: 500;
   font-size: 3rem;
 }
 
-.xd-lead {
+.lead {
   font-size: 1.35rem;
   font-weight: 400;
   word-break: keep-all;
 }
 
-.xd-content-title {
+.content-title {
   font-size: 2rem;
 }
 
-.xd-example {
+.example {
   position: relative;
   padding: 1rem;
   margin: 1rem -12px 0;
@@ -53,7 +49,7 @@ body {
   border-width: 0.2rem 0 0;
 }
 
-.xd-code {
+.code {
   padding: 1rem;
   margin-top: 0;
   margin-bottom: 1rem;
@@ -67,7 +63,7 @@ body {
 // @include media-breakpoint-up('md') {
 
 @media (min-width: 992px) {
-  .xd-snb {
+  .snb-wrap {
     @supports (position: sticky) {
       position: sticky;
       top: 0;
@@ -78,11 +74,11 @@ body {
     border-right: 1px solid #e0e0e0;
   }
 
-  .xd-content {
+  .content {
     padding-left: 3rem;
   }
 
-  .xd-example {
+  .example {
     padding: 1.5rem;
     margin-right: 0;
     margin-left: 0;

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>index - XE NEW Component</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3/xeicon.min.css">
+  <link rel="stylesheet" href="https://www.xpressengine.io/assets/core/xe-ui-component/xe-ui-component.css?1560148668">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.css">
+  <link rel="stylesheet" href="css/page.css">
+  <link rel="stylesheet" href="../css/xe-ui.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <main id="container" class="container xe-container">
+      <div class="xe-row">
+        <!-- 사이드 메뉴 -->
+        <!-- index.html 의 class="snb" 영역에 들어가는 페이지 -->
+        <div class="xe-col-md-3 snb-wrap">
+                  <nav class="snb " style="background-color: transparent">
+          <ul class="snb-list">
+            <li>
+              <a href="#">Layout</a>
+              <ul>
+                <li><a href="#">Grid</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/dist/preview/index.html?menu=typography">Content</a>
+              <ul>
+                <li><a href="/dist/preview/index.html?menu=typography">Typography</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/dist/preview/index.html?menu=buttons">Component</a>
+              <ul>
+                <li class=""><a href="/dist/preview/index.html?menu=buttons">Buttons</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- //menu.html 영역 -->
+        <script>
+          $(function() {
+            // url query string 을 JSON 객체 형태로 리턴 (https://gent.tistory.com/62)
+            function getUrlParams() {
+              var params = {};
+              window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+                params[key] = value;
+              });
+              return params;
+            }
+
+            // 선택된 메뉴명
+            var menuParams = getUrlParams();
+
+            var arrLinkList = $('.snb-list a');
+            var linkNumber = 0;
+            arrLinkList.each(function(index, item) {
+              var arrMenu = $(item).attr('href').split('menu=');
+              var strMenu = arrMenu[arrMenu.length - 1];
+
+              if(menuParams['menu'] == strMenu) {
+                linkNumber = index;
+              }
+            });
+            $('.snb-list a').eq(linkNumber).parent().addClass('on');
+          });
+        </script>
+        </div>
+        <!-- //사이드 메뉴 -->
+        <!-- 컨텐츠 -->
+        <div class="xe-col-md-9">
+            <div id="content" class="content " style="background-color: transparent">
+              <!-- 페이지 컨텐츠 들어가는 곳 -->
+              
+    <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
+    <h2 class="title">Buttons</h2>
+    <!-- 페이지 설명 : class="lead" -->
+    <p class="lead">다양한 크기, 상태 등을 지원하는 폼, 대화 상자 등의 작업에 부트 스트랩의 사용자 정의 단추 스타일을 사용하십시오.</p>
+    <!-- === 항목 한 블럭 === -->
+    <!-- 제목(항목) : class="content-title" -->
+    <h3><span class="content-title">Native</span></h3>
+    <!-- 설명 : p 태그 -->
+    <p>얘네들은 영향을 받으면 안 됨</p>
+    <!-- 예시 : class="example" -->
+    <div class="example">
+      <input type="button" value="input button">
+      <input type="submit" value="input submit">
+      <input type="reset" value="input reset">
+      <button type="button">button button</button>
+      <button type="submit">button submit</button>
+      <button type="reset">button reset</button>
+      <a href="#link">a link</a>
+    </div>
+    <!-- 코드 : class="code", prism.js 코드 하이라이트 적용 -->
+    <div class="code">
+        <pre><code class="language-html">&lt;input type="button" value="input button"&gt;
+&lt;input type="submit" value="input submit"&gt;
+&lt;input type="reset" value="input reset"&gt;
+&lt;button type="button"&gt;button button&lt;/button&gt;
+&lt;button type="submit"&gt;button submit&lt;/button&gt;
+&lt;button type="reset"&gt;button reset&lt;/button&gt;
+&lt;a href="#link"&gt;a link&lt;/a&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">기본형</span></h3>
+    <p>버튼 기본형태</p>
+    <div class="example">
+      <button class="xu-button xu-button--default">(default)</button>
+      <button class="xu-button xu-button--primary">primary</button>
+      <button class="xu-button xu-button--link">link</button>
+      <button class="xu-button xu-button--subtle">subtle</button>
+      <button class="xu-button xu-button--subtle-link">subtle-link</button>
+      <button class="xu-button xu-button--warning">warning</button>
+      <button class="xu-button xu-button--danger">danger</button>
+      <button class="xu-button xu-button--default xu-button--selected">selected all</button>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default"&gt;(default)&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary"&gt;primary&lt;/button&gt;
+&lt;button class="xu-button xu-button--link"&gt;link&lt;/button&gt;
+&lt;button class="xu-button xu-button--subtle"&gt;subtle&lt;/button&gt;
+&lt;button class="xu-button xu-button--subtle-link"&gt;subtle-link&lt;/button&gt;
+&lt;button class="xu-button xu-button--warning"&gt;warning&lt;/button&gt;
+&lt;button class="xu-button xu-button--danger"&gt;danger&lt;/button&gt;
+&lt;button class="xu-button xu-button--default xu-button--selected"&gt;selected all&lt;/button&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Size</span></h3>
+    <p>버튼 사이즈</p>
+    <div class="example">
+      <button class="xu-button xu-button--primary">default</button>
+      <button class="xu-button xu-button--primary xu-button--small">small</button>
+      <button class="xu-button xu-button--primary xu-button--large">large</button>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary"&gt;default&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--small"&gt;small&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--large"&gt;large&lt;/button&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Block</span></h3>
+    <p>블럭 형태</p>
+    <div class="example">
+      <button class="xu-button xu-button--default xu-button--block">Block level button</button>
+      <button class="xu-button xu-button--primary xu-button--block">Block level button</button>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default xu-button--block"&gt;Block level button&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--block"&gt;Block level button&lt;/button&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Active</span></h3>
+    <p>active 상태, focus 상태, hover 상태</p>
+    <div class="example">
+      <button class="xu-button xu-button--primary active">button active</button>
+      <button class="xu-button xu-button--primary focus">button focus</button>
+      <button class="xu-button xu-button--primary hover">button hover</button>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary active"&gt;active&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary focus"&gt;focus&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary hover"&gt;hover&lt;/button&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Disabled</span></h3>
+    <p>비활성화 상태, 클래스와 attr 의 disabled 속성을 같이 적용</p>
+    <div class="example">
+      <button class="xu-button xu-button--default disabled" disabled="">default</button>
+      <button class="xu-button xu-button--primary disabled" disabled="">primary</button>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default disabled" disabled&gt;disabled&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary disabled" disabled&gt;disabled&lt;/button&gt;</code></pre>
+    </div>
+    <p>비활성화 상태, a 태그는 disabled 가 없음 클래스를 붙여서 적용</p>
+    <div class="example">
+      <a href="#" class="xu-button xu-button--default disabled" tabindex="-1" role="button" aria-disabled="true">default</a>
+      <a href="#" class="xu-button xu-button--primary disabled" tabindex="-1" role="button" aria-disabled="true">primary</a>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default disabled" tabindex="-1" role="button" aria-disabled="true"&gt;disabled&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary disabled" tabindex="-1" role="button" aria-disabled="true"&gt;primary&lt;/button&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Icon</span></h3>
+    <p>
+      아이콘 버튼<br>
+      class="xu-button__icon" 영역에 class="xu-button__icon--pen" 에 아이콘 이미지가 적용되어 있습니다.<br>
+      커스텀된 아이콘을 사용하고 싶다면 class="xu-button__icon--pen" 대신 아이콘 이미지를 적용한 클래스를 적용하면 다른 아이콘들도 적용할 수 있습니다.
+    </p>
+    <div class="example">
+      <button class="xu-button xu-button--default xu-button--icon">
+        <span class="xu-button__icon xu-button__icon--pen"></span>
+      </button>
+      <button class="xu-button xu-button--primary xu-button--icon">
+        <span class="xu-button__icon xu-button__icon--pen"></span>
+      </button>
+      <button class="xu-button xu-button--warning xu-button--icon">
+        <span class="xu-button__icon xu-button__icon--pen"></span>
+      </button>
+      <button class="xu-button xu-button--danger xu-button--icon">
+        <span class="xu-button__icon xu-button__icon--pen"></span>
+      </button>
+      <button class="xu-button xu-button--default xu-button--icon xu-button--selected">
+        <span class="xu-button__icon xu-button__icon--pen"></span>
+      </button>
+      <button class="xu-button xu-button--subtle xu-button--icon">
+        <span class="xu-button__icon xu-button__icon--trash"></span>
+      </button>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default xu-button--icon"&gt;
+&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--icon"&gt;
+&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--warning xu-button--icon"&gt;
+&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--danger xu-button--icon"&gt;
+&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--default xu-button--icon xu-button--selected"&gt;
+&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--subtle xu-button--icon"&gt;
+&lt;span class="xu-button__icon xu-button__icon--trash"&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+  
+              <!-- //페이지 컨텐츠 들어가는 곳 -->
+            </div>
+        </div>
+        <!-- //컨텐츠 -->
+      </div>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,50 @@
+        <nav class="snb " style="background-color: transparent">
+          <ul class="snb-list">
+            <li>
+              <a href="#">Layout</a>
+              <ul>
+                <li><a href="#">Grid</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/dist/preview/index.html?menu=typography">Content</a>
+              <ul>
+                <li><a href="/dist/preview/index.html?menu=typography">Typography</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/dist/preview/index.html?menu=buttons">Component</a>
+              <ul>
+                <li class=""><a href="/dist/preview/index.html?menu=buttons">Buttons</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- //menu.html 영역 -->
+        <script>
+          $(function() {
+            // url query string 을 JSON 객체 형태로 리턴 (https://gent.tistory.com/62)
+            function getUrlParams() {
+              var params = {};
+              window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+                params[key] = value;
+              });
+              return params;
+            }
+
+            // 선택된 메뉴명
+            var menuParams = getUrlParams();
+
+            var arrLinkList = $('.snb-list a');
+            var linkNumber = 0;
+            arrLinkList.each(function(index, item) {
+              var arrMenu = $(item).attr('href').split('menu=');
+              var strMenu = arrMenu[arrMenu.length - 1];
+
+              if(menuParams['menu'] == strMenu) {
+                linkNumber = index;
+              }
+            });
+            $('.snb-list a').eq(linkNumber).parent().addClass('on');
+          });
+        </script>

@@ -17,7 +17,27 @@
 </head>
 
 <body>
-  <block name="body"></block>
+  <div class="wrap">
+    <main id="container" class="container xe-container">
+      <div class="xe-row">
+        <!-- 사이드 메뉴 -->
+        <!-- index.html 의 class="snb" 영역에 들어가는 페이지 -->
+        <div class="xe-col-md-3 snb-wrap">
+          <include src="include/_nav.html"></include>
+        </div>
+        <!-- //사이드 메뉴 -->
+        <!-- 컨텐츠 -->
+        <div class="xe-col-md-9">
+            <div id="content" class="content " style="background-color: transparent">
+              <!-- 페이지 컨텐츠 들어가는 곳 -->
+              <block name="body.main">{!! $layout !!}</block>
+              <!-- //페이지 컨텐츠 들어가는 곳 -->
+            </div>
+        </div>
+        <!-- //컨텐츠 -->
+      </div>
+    </main>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.js"></script>
 </body>
 </html>

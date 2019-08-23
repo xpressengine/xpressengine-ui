@@ -87,8 +87,10 @@ const taskPosthtml = function () {
   const options = {
     root: './html'
   }
+
   const plugins = [
-    require('posthtml-extend')(options)
+    require('posthtml-extend')(options),
+    require('posthtml-include')(options)
   ]
 
   return src(['html/*.html', '!**/_*.html', ...ignore])

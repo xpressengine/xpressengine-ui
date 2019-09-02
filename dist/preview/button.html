@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>index - XE NEW Component</title>
+  <title>Button - XE NEW Component</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -26,21 +26,23 @@
                   <nav class="snb " style="background-color: transparent">
           <ul class="snb-list">
             <li>
-              <a href="#">Layout</a>
+              <a href="/dist/preview/grid.html">Layout</a>
               <ul>
-                <li><a href="#">Grid</a></li>
+                <li><a href="/dist/preview/grid.html">Grid</a></li>
               </ul>
             </li>
             <li>
-              <a href="/dist/preview/index.html?menu=typography">Content</a>
+              <a href="/dist/preview/typography.html">Content</a>
               <ul>
-                <li><a href="/dist/preview/index.html?menu=typography">Typography</a></li>
+                <li><a href="/dist/preview/typography.html">Typography</a></li>
               </ul>
             </li>
             <li>
-              <a href="/dist/preview/index.html?menu=buttons">Component</a>
+              <a href="/dist/preview/button.html">Component</a>
               <ul>
-                <li class=""><a href="/dist/preview/index.html?menu=buttons">Buttons</a></li>
+                <li class=""><a href="/dist/preview/button.html">Buttons</a></li>
+                <li class=""><a href="/dist/preview/checkradio.html">CheckRadio</a></li>
+                <li class=""><a href="/dist/preview/forms.html">Forms</a></li>
               </ul>
             </li>
           </ul>
@@ -49,28 +51,40 @@
         <script>
           $(function() {
             // url query string 을 JSON 객체 형태로 리턴 (https://gent.tistory.com/62)
-            function getUrlParams() {
-              var params = {};
-              window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
-                params[key] = value;
-              });
-              return params;
+            // function getUrlParams() {
+            //   var params = {};
+            //   window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+            //     params[key] = value;
+            //   });
+            //   return params;
+            // }
+
+            // 파일명 뽑기 (href 정보 기준, test.html => test)
+            function locationUrlFileName (pHref, pExtension) {
+              var arrHref = pHref.split('/');
+              var locationUrlName = arrHref[arrHref.length - 1].split('.' + pExtension)[0];
+
+              return locationUrlName;
             }
 
-            // 선택된 메뉴명
-            var menuParams = getUrlParams();
+            // 좌측 nav 메뉴 선택 표시 스크립트
+            var locationHref = window.location.href;
+            var locationUrlName = locationUrlFileName(locationHref,'html');
 
             var arrLinkList = $('.snb-list a');
-            var linkNumber = 0;
+            var linkNumber = -1;
             arrLinkList.each(function(index, item) {
-              var arrMenu = $(item).attr('href').split('menu=');
-              var strMenu = arrMenu[arrMenu.length - 1];
+              var itemHref = $(item).attr('href');
+              var itemUrlName = locationUrlFileName(itemHref,'html');
 
-              if(menuParams['menu'] == strMenu) {
+              if(locationUrlName == itemUrlName) {
                 linkNumber = index;
               }
             });
-            $('.snb-list a').eq(linkNumber).parent().addClass('on');
+
+            if(linkNumber > -1) {
+              $('.snb-list a').eq(linkNumber).parent().addClass('on');
+            }
           });
         </script>
         </div>
@@ -114,134 +128,309 @@
     <h3><span class="content-title">기본형</span></h3>
     <p>버튼 기본형태</p>
     <div class="example">
-      <button class="xu-button xu-button--default">(default)</button>
-      <button class="xu-button xu-button--primary">primary</button>
-      <button class="xu-button xu-button--link">link</button>
-      <button class="xu-button xu-button--subtle">subtle</button>
-      <button class="xu-button xu-button--subtle-link">subtle-link</button>
-      <button class="xu-button xu-button--warning">warning</button>
-      <button class="xu-button xu-button--danger">danger</button>
-      <button class="xu-button xu-button--default xu-button--selected">selected all</button>
+      <button class="xu-button xu-button--default">
+        <span class="xu-button__text">(default)</span></button>
+      <button class="xu-button xu-button--primary">
+        <span class="xu-button__text">primary</span>
+      </button>
+      <button class="xu-button xu-button--link">
+        <span class="xu-button__text">link</span>
+      </button>
+      <button class="xu-button xu-button--subtle">
+        <span class="xu-button__text">subtle</span>
+      </button>
+      <button class="xu-button xu-button--subtle-link">
+        <span class="xu-button__text">subtle-link</span>
+      </button>
+      <button class="xu-button xu-button--warning">
+        <span class="xu-button__text">warning</span>
+      </button>
+      <button class="xu-button xu-button--danger">
+        <span class="xu-button__text">danger</span>
+      </button>
+      <button class="xu-button xu-button--default xu-button--selected">
+        <span class="xu-button__text">selected all</span>
+      </button>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;button class="xu-button xu-button--default"&gt;(default)&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary"&gt;primary&lt;/button&gt;
-&lt;button class="xu-button xu-button--link"&gt;link&lt;/button&gt;
-&lt;button class="xu-button xu-button--subtle"&gt;subtle&lt;/button&gt;
-&lt;button class="xu-button xu-button--subtle-link"&gt;subtle-link&lt;/button&gt;
-&lt;button class="xu-button xu-button--warning"&gt;warning&lt;/button&gt;
-&lt;button class="xu-button xu-button--danger"&gt;danger&lt;/button&gt;
-&lt;button class="xu-button xu-button--default xu-button--selected"&gt;selected all&lt;/button&gt;</code></pre>
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default"&gt;
+  &lt;span class="xu-button__text"&gt;(default)&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary"&gt;
+  &lt;span class="xu-button__text"&gt;primary&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--link"&gt;
+  &lt;span class="xu-button__text"&gt;link&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--subtle"&gt;
+  &lt;span class="xu-button__text"&gt;subtle&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--subtle-link"&gt;
+  &lt;span class="xu-button__text"&gt;subtle-link&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--warning"&gt;
+  &lt;span class="xu-button__text"&gt;warning&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--danger"&gt;
+  &lt;span class="xu-button__text"&gt;danger&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--default xu-button--selected"&gt;
+  &lt;span class="xu-button__text"&gt;selected all&lt;/span&gt;
+&lt;/button&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
     <!-- === 항목 한 블럭 === -->
     <h3><span class="content-title">Size</span></h3>
     <p>버튼 사이즈</p>
     <div class="example">
-      <button class="xu-button xu-button--primary">default</button>
-      <button class="xu-button xu-button--primary xu-button--small">small</button>
-      <button class="xu-button xu-button--primary xu-button--large">large</button>
+      <button class="xu-button xu-button--primary xu-button--small">
+        <span class="xu-button__text">small</span>
+      </button>
+      <button class="xu-button xu-button--primary">
+        <span class="xu-button__text">default</span>
+      </button>
+      <button class="xu-button xu-button--primary xu-button--large">
+        <span class="xu-button__text">large</span>
+      </button>
+      <a href="#" class="xu-button xu-button--primary xu-button--small">
+        <span class="xu-button__text">small a tag</span>
+      </a>
+      <a href="#" class="xu-button xu-button--primary">
+        <span class="xu-button__text">default a tag</span>
+      </a>
+      <a href="#" class="xu-button xu-button--primary xu-button--large">
+        <span class="xu-button__text">large a tag</span>
+      </a>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary"&gt;default&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary xu-button--small"&gt;small&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary xu-button--large"&gt;large&lt;/button&gt;</code></pre>
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary xu-button--small"&gt;
+  &lt;span class="xu-button__text"&gt;small&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary"&gt;
+  &lt;span class="xu-button__text"&gt;default&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--large"&gt;
+  &lt;span class="xu-button__text"&gt;large&lt;/span&gt;
+&lt;/button&gt;
+&lt;a href="#" class="xu-button xu-button--primary xu-button--small"&gt;
+  &lt;span class="xu-button__text"&gt;small a tag&lt;/span&gt;
+&lt;/a&gt;
+&lt;a href="#" class="xu-button xu-button--primary"&gt;
+  &lt;span class="xu-button__text"&gt;default a tag&lt;/span&gt;
+&lt;/a&gt;
+&lt;a href="#" class="xu-button xu-button--primary xu-button--large"&gt;
+  &lt;span class="xu-button__text"&gt;large a tag&lt;/span&gt;
+&lt;/a&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
     <!-- === 항목 한 블럭 === -->
     <h3><span class="content-title">Block</span></h3>
     <p>블럭 형태</p>
     <div class="example">
-      <button class="xu-button xu-button--default xu-button--block">Block level button</button>
-      <button class="xu-button xu-button--primary xu-button--block">Block level button</button>
+      <button class="xu-button xu-button--default xu-button--block">
+        <span class="xu-button__text">Block level button</span>
+      </button>
+      <button class="xu-button xu-button--primary xu-button--block">
+        <span class="xu-button__text">Block level button</span>
+      </button>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;button class="xu-button xu-button--default xu-button--block"&gt;Block level button&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary xu-button--block"&gt;Block level button&lt;/button&gt;</code></pre>
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default xu-button--block"&gt;
+  &lt;span class="xu-button__text"&gt;Block level button&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--block"&gt;
+  &lt;span class="xu-button__text"&gt;Block level button&lt;/span&gt;
+&lt;/button&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
     <!-- === 항목 한 블럭 === -->
     <h3><span class="content-title">Active</span></h3>
     <p>active 상태, focus 상태, hover 상태</p>
     <div class="example">
-      <button class="xu-button xu-button--primary active">button active</button>
-      <button class="xu-button xu-button--primary focus">button focus</button>
-      <button class="xu-button xu-button--primary hover">button hover</button>
+      <button class="xu-button xu-button--primary active">
+        <span class="xu-button__text">button active</span>
+      </button>
+      <button class="xu-button xu-button--primary focus">
+        <span class="xu-button__text">button focus</span>
+      </button>
+      <button class="xu-button xu-button--primary hover">
+        <span class="xu-button__text">button hover</span>
+      </button>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary active"&gt;active&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary focus"&gt;focus&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary hover"&gt;hover&lt;/button&gt;</code></pre>
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary active"&gt;
+  &lt;span class="xu-button__text"&gt;button active&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary focus"&gt;
+  &lt;span class="xu-button__text"&gt;button focus&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary hover"&gt;
+  &lt;span class="xu-button__text"&gt;button hover&lt;/span&gt;
+&lt;/button&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
     <!-- === 항목 한 블럭 === -->
     <h3><span class="content-title">Disabled</span></h3>
     <p>비활성화 상태, 클래스와 attr 의 disabled 속성을 같이 적용</p>
     <div class="example">
-      <button class="xu-button xu-button--default disabled" disabled="">default</button>
-      <button class="xu-button xu-button--primary disabled" disabled="">primary</button>
+      <button class="xu-button xu-button--default disabled" disabled="">
+        <span class="xu-button__text">default</span>
+      </button>
+      <button class="xu-button xu-button--primary disabled" disabled="">
+          <span class="xu-button__text">primary</span>
+      </button>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;button class="xu-button xu-button--default disabled" disabled&gt;disabled&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary disabled" disabled&gt;disabled&lt;/button&gt;</code></pre>
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default disabled" disabled&gt;
+  &lt;span class="xu-button__text"&gt;default&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary disabled" disabled&gt;
+    &lt;span class="xu-button__text"&gt;primary&lt;/span&gt;
+&lt;/button&gt;</code></pre>
     </div>
     <p>비활성화 상태, a 태그는 disabled 가 없음 클래스를 붙여서 적용</p>
     <div class="example">
-      <a href="#" class="xu-button xu-button--default disabled" tabindex="-1" role="button" aria-disabled="true">default</a>
-      <a href="#" class="xu-button xu-button--primary disabled" tabindex="-1" role="button" aria-disabled="true">primary</a>
+      <a href="#" class="xu-button xu-button--default disabled" tabindex="-1" role="button" aria-disabled="true">
+        <span class="xu-button__text">default</span>
+      </a>
+      <a href="#" class="xu-button xu-button--primary disabled" tabindex="-1" role="button" aria-disabled="true">
+        <span class="xu-button__text">primary</span>
+      </a>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;button class="xu-button xu-button--default disabled" tabindex="-1" role="button" aria-disabled="true"&gt;disabled&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary disabled" tabindex="-1" role="button" aria-disabled="true"&gt;primary&lt;/button&gt;</code></pre>
+        <pre><code class="language-html">&lt;a href="#" class="xu-button xu-button--default disabled" tabindex="-1" role="button" aria-disabled="true"&gt;
+  &lt;span class="xu-button__text"&gt;default&lt;/span&gt;
+&lt;/a&gt;
+&lt;a href="#" class="xu-button xu-button--primary disabled" tabindex="-1" role="button" aria-disabled="true"&gt;
+  &lt;span class="xu-button__text"&gt;primary&lt;/span&gt;
+&lt;/a&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
     <!-- === 항목 한 블럭 === -->
     <h3><span class="content-title">Icon</span></h3>
     <p>
       아이콘 버튼<br>
-      class="xu-button__icon" 영역에 class="xu-button__icon--pen" 에 아이콘 이미지가 적용되어 있습니다.<br>
-      커스텀된 아이콘을 사용하고 싶다면 class="xu-button__icon--pen" 대신 아이콘 이미지를 적용한 클래스를 적용하면 다른 아이콘들도 적용할 수 있습니다.
+      class="xu-button__icon" 영역 내부에 XEIcon 적용 또는 class="xu-button__icon"가 적용된 곳에 백그라운드 이미지를 적용하여 사용할 수 있습니다.
     </p>
     <div class="example">
       <button class="xu-button xu-button--default xu-button--icon">
-        <span class="xu-button__icon xu-button__icon--pen"></span>
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
       </button>
       <button class="xu-button xu-button--primary xu-button--icon">
-        <span class="xu-button__icon xu-button__icon--pen"></span>
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
       </button>
       <button class="xu-button xu-button--warning xu-button--icon">
-        <span class="xu-button__icon xu-button__icon--pen"></span>
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
       </button>
       <button class="xu-button xu-button--danger xu-button--icon">
-        <span class="xu-button__icon xu-button__icon--pen"></span>
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
       </button>
       <button class="xu-button xu-button--default xu-button--icon xu-button--selected">
-        <span class="xu-button__icon xu-button__icon--pen"></span>
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
       </button>
       <button class="xu-button xu-button--subtle xu-button--icon">
-        <span class="xu-button__icon xu-button__icon--trash"></span>
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
       </button>
     </div>
     <div class="code">
         <pre><code class="language-html">&lt;button class="xu-button xu-button--default xu-button--icon"&gt;
-&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
 &lt;/button&gt;
 &lt;button class="xu-button xu-button--primary xu-button--icon"&gt;
-&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
 &lt;/button&gt;
 &lt;button class="xu-button xu-button--warning xu-button--icon"&gt;
-&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
 &lt;/button&gt;
 &lt;button class="xu-button xu-button--danger xu-button--icon"&gt;
-&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
 &lt;/button&gt;
 &lt;button class="xu-button xu-button--default xu-button--icon xu-button--selected"&gt;
-&lt;span class="xu-button__icon xu-button__icon--pen"&gt;&lt;/span&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
 &lt;/button&gt;
 &lt;button class="xu-button xu-button--subtle xu-button--icon"&gt;
-&lt;span class="xu-button__icon xu-button__icon--trash"&gt;&lt;/span&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
 &lt;/button&gt;</code></pre>
     </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <!-- <h3><span class="content-title">Icon and Label</span></h3>
+    <p>
+      아이콘 버튼 과 라벨
+    </p>
+    <div class="example">
+      <button class="xu-button xu-button--default xu-button--icon-label">
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
+        <span class="xu-button__text">Button</span>
+      </button>
+      <button class="xu-button xu-button--primary xu-button--icon-label">
+        <span class="xu-button__icon">
+          <i class="xi-pen"></i>
+        </span>
+        <span class="xu-button__text">버튼</span>
+      </button>
+      <button class="xu-button xu-button--primary xu-button--icon-label">
+        <span class="xu-button__text">버튼</span>
+      </button>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--default xu-button--icon"&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--icon"&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--warning xu-button--icon"&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--danger xu-button--icon"&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--default xu-button--icon xu-button--selected"&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="xu-button xu-button--subtle xu-button--icon"&gt;
+  &lt;span class="xu-button__icon"&gt;
+    &lt;i class="xi-pen"&gt;&lt;/i&gt;
+  &lt;/span&gt;
+&lt;/button&gt;</code></pre>
+    </div> -->
     <!-- === //항목 한 블럭 === -->
   
               <!-- //페이지 컨텐츠 들어가는 곳 -->

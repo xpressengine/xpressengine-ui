@@ -1,0 +1,190 @@
+<extends src="layout/_main-content.html">
+  <block name="head.title">checkbox &amp; radio - XE NEW Component</block>
+  <block name="body.main">
+    <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
+    <h2 class="title">Checkbox &amp; Radio Input </h2>
+    <!-- 페이지 설명 : class="lead" -->
+    <p class="lead">XE3 새로운 스타일 Checkbox &amp; Radio Inputs 입니다.</p>
+    <!-- === 항목 한 블럭 === -->
+    <!-- 제목(항목) : class="content-title" -->
+    <h3><span class="content-title">Native</span></h3>
+    <!-- 설명 : p 태그 -->
+    <p>얘네들은 영향을 받으면 안 됨</p>
+    <!-- 예시 : class="example" -->
+    <div class="example">
+      <input type="checkbox">
+      <label>
+          <input type="checkbox">
+          체크박스
+      </label>
+      <input type="radio" name="test">
+      <label>
+          <input type="radio" name="test">
+          버튼
+      </label>
+    </div>
+    <!-- 코드 : class="code", prism.js 코드 하이라이트 적용 -->
+    <div class="code">
+        <pre><code class="language-html">&lt;input type="checkbox"&gt;
+&lt;label&gt;
+    &lt;input type="checkbox"&gt;
+    체크박스
+&lt;/label&gt;
+&lt;input type="radio" name="test"&gt;
+&lt;label&gt;
+    &lt;input type="radio" name="test"&gt;
+    버튼
+&lt;/label&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">CheckBoxes</span></h3>
+    <p>CheckBoxes 기본형태</p>
+    <div class="example">
+      <div>
+        <label class="xu-label-checkradio">
+          <input type="checkbox">
+          <span class="xu-label-checkradio__helper"></span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio">
+          <input type="checkbox">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">체크박스</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio">
+          <input type="checkbox" checked="checked">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">체크박스(checked)</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--hover">
+          <input type="checkbox">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">체크박스(hover)</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--focus">
+          <input type="checkbox" checked="checked">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">체크박스(focus)</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--disabled">
+          <input type="checkbox" disabled="disabled">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">체크박스(disabled)</span>
+        </label>  
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--disabled">
+          <input type="checkbox" checked="checked" disabled="disabled">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">체크박스(checked + disabled)</span>
+        </label>
+      </div>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;label class="xu-label-checkradio"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
+  &lt;input type="checkbox" checked="checked"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--hover"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(hover)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--focus"&gt;
+  &lt;input type="checkbox" checked="checked"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(focus)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
+  &lt;input type="checkbox" disabled="disabled"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(disabled)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
+  &lt;input type="checkbox" checked="checked" disabled="disabled"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked + disabled)&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Radio Button</span></h3>
+    <p>라디오 버튼</p>
+    <div class="example">
+      <div>
+        <label class="xu-label-checkradio">
+          <input type="radio" name="xuComponent">
+          <span class="xu-label-checkradio__helper"></span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio">
+          <input type="radio" name="xuComponent">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">라디오 버튼</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio">
+          <input type="radio" name="xuComponent" checked="checked">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">라디오 버튼(checked)</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--hover">
+          <input type="radio" name="xuComponentHover" checked="checked">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">라디오 버튼(hover)</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--focus">
+          <input type="radio" name="xuComponentFocus">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">라디오 버튼(focus)</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--disabled">
+          <input type="radio" name="xuComponentDisabled" disabled="disabled">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">라디오 버튼(disabled)</span>
+        </label>
+      </div>
+      <div>
+        <label class="xu-label-checkradio xu-label-checkradio--disabled">
+          <input type="radio" name="xuComponentDisabled" disabled="disabled" checked="checked">
+          <span class="xu-label-checkradio__helper"></span>
+          <span class="xu-label-checkradio__text">라디오 버튼(disabled + checked)</span>
+        </label>
+      </div>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary"&gt;default&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--small"&gt;small&lt;/button&gt;
+&lt;button class="xu-button xu-button--primary xu-button--large"&gt;large&lt;/button&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+  </block>
+</extends>

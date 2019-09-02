@@ -1,21 +1,23 @@
         <nav class="snb " style="background-color: transparent">
           <ul class="snb-list">
             <li>
-              <a href="#">Layout</a>
+              <a href="/dist/preview/grid.html">Layout</a>
               <ul>
-                <li><a href="#">Grid</a></li>
+                <li><a href="/dist/preview/grid.html">Grid</a></li>
               </ul>
             </li>
             <li>
-              <a href="/dist/preview/index.html?menu=typography">Content</a>
+              <a href="/dist/preview/typography.html">Content</a>
               <ul>
-                <li><a href="/dist/preview/index.html?menu=typography">Typography</a></li>
+                <li><a href="/dist/preview/typography.html">Typography</a></li>
               </ul>
             </li>
             <li>
-              <a href="/dist/preview/index.html?menu=buttons">Component</a>
+              <a href="/dist/preview/button.html">Component</a>
               <ul>
-                <li class=""><a href="/dist/preview/index.html?menu=buttons">Buttons</a></li>
+                <li class=""><a href="/dist/preview/button.html">Buttons</a></li>
+                <li class=""><a href="/dist/preview/checkradio.html">CheckRadio</a></li>
+                <li class=""><a href="/dist/preview/forms.html">Forms</a></li>
               </ul>
             </li>
           </ul>
@@ -24,27 +26,39 @@
         <script>
           $(function() {
             // url query string 을 JSON 객체 형태로 리턴 (https://gent.tistory.com/62)
-            function getUrlParams() {
-              var params = {};
-              window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
-                params[key] = value;
-              });
-              return params;
+            // function getUrlParams() {
+            //   var params = {};
+            //   window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+            //     params[key] = value;
+            //   });
+            //   return params;
+            // }
+
+            // 파일명 뽑기 (href 정보 기준, test.html => test)
+            function locationUrlFileName (pHref, pExtension) {
+              var arrHref = pHref.split('/');
+              var locationUrlName = arrHref[arrHref.length - 1].split('.' + pExtension)[0];
+
+              return locationUrlName;
             }
 
-            // 선택된 메뉴명
-            var menuParams = getUrlParams();
+            // 좌측 nav 메뉴 선택 표시 스크립트
+            var locationHref = window.location.href;
+            var locationUrlName = locationUrlFileName(locationHref,'html');
 
             var arrLinkList = $('.snb-list a');
-            var linkNumber = 0;
+            var linkNumber = -1;
             arrLinkList.each(function(index, item) {
-              var arrMenu = $(item).attr('href').split('menu=');
-              var strMenu = arrMenu[arrMenu.length - 1];
+              var itemHref = $(item).attr('href');
+              var itemUrlName = locationUrlFileName(itemHref,'html');
 
-              if(menuParams['menu'] == strMenu) {
+              if(locationUrlName == itemUrlName) {
                 linkNumber = index;
               }
             });
-            $('.snb-list a').eq(linkNumber).parent().addClass('on');
+
+            if(linkNumber > -1) {
+              $('.snb-list a').eq(linkNumber).parent().addClass('on');
+            }
           });
         </script>

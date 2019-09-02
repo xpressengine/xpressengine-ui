@@ -1,0 +1,323 @@
+.#{$prefix}-label-checkradio {
+  position: relative;
+  display: inline-block;
+  min-width: 16px;
+  min-height: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  letter-spacing: -0.4px;
+  color: $N200;
+  vertical-align: top;
+  cursor: pointer;
+
+  // 공통 적용
+  // &:not([disabled]) {
+  //   cursor: pointer;
+  // }
+  &--disabled {
+    cursor: default;
+  }
+
+  // // 공통 적용
+  // &:focus:not([disabled]),
+  // &.focus:not([disabled]) {
+  //   box-shadow: 0 0 0 2px rgba($B400, 0.4);
+  // }
+
+  // 사이즈
+  &--large {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &--small {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  // 공통 : 체크박스, 라이오버튼
+  input[type="checkbox"],
+  input[type="radio"] {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    border: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    left: -9999px;
+  }
+
+  .xu-label-checkradio__helper {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1.7px solid $N80;
+    border-radius: 2px;
+    background-color: $N0;
+  }
+
+  input[type="radio"] {
+    + .xu-label-checkradio__helper {
+      border-radius: 16px;
+    }
+  }
+
+  .xu-label-checkradio__text {
+    padding-left: 24px;
+  }
+
+  // 항목 : 체크박스 - 체크
+  input[type="checkbox"]:checked {
+    + .xu-label-checkradio__helper {
+      border-color: $B500;
+      background-color: $B500;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 4px;
+        height: 7px;
+        margin-top: -6px;
+        margin-left: -3px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        -webkit-transform: rotate(40deg);
+        -ms-transform: rotate(40deg);
+        transform: rotate(40deg);
+      }
+    }
+  }
+
+  // 항목 : 라디오버튼 - 체크
+  input[type="radio"]:checked {
+    + .xu-label-checkradio__helper {
+      border-color: $B500;
+      background-color: $N0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 8px;
+        height: 8px;
+        margin-top: -4px;
+        margin-left: -4px;
+        border-radius: 8px;
+        background-color: $B500;
+      }
+    }
+  }
+
+  // 상태 : hover
+  // 상태 : 체크박스, 라디오버튼 - hover
+  &:hover,
+  &.#{$prefix}-label-checkradio--hover {
+    // 체크박스
+    input[type="checkbox"] {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $N0;
+      }
+    }
+
+    input[type="checkbox"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $B400;
+      }
+    }
+
+    // 라디오버튼
+    input[type="radio"] {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $N0;
+      }
+    }
+
+    input[type="radio"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $N0;
+
+        &::after {
+          content: '';
+          background-color: $B400;
+        }
+      }
+    }
+  }
+
+  // 상태 : active
+  // 상태 : 체크박스, 라디오버튼 - active
+  &:active {
+    input[type="checkbox"] {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $B200;
+      }
+    }
+
+    input[type="checkbox"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $B200;
+
+        &::after {
+          content: '';
+          border-right-color: $B500;
+          border-bottom-color: $B500;
+        }
+      }
+    }
+
+    // 라디오버튼
+    input[type="radio"] {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $B200;
+      }
+    }
+
+    input[type="radio"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $B200;
+
+        &::after {
+          content: '';
+          background-color: $B400;
+        }
+      }
+    }
+  }
+
+  // 상태 : focus
+  // 상태 : 체크박스 - focus
+  input[type="checkbox"]:focus {
+    + .#{$prefix}-label-checkradio__helper {
+      border-color: $B400;
+      background-color: $N0;
+    }
+  }
+
+  input[type="checkbox"]:checked:focus {
+    + .#{$prefix}-label-checkradio__helper {
+      border-color: $B400;
+      background-color: $B500;
+    }
+  }
+
+  &.#{$prefix}-label-checkradio--focus {
+    // 체크박스
+    input[type="checkbox"] + {
+      .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $N0;
+      }
+    }
+
+    input[type="checkbox"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $B500;
+      }
+    }
+
+    // 라디오 버튼
+    input[type="radio"] + {
+      .#{$prefix}-label-checkradio__helper {
+        border-color: $B400;
+        background-color: $N0;
+      }
+    }
+
+    input[type="radio"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $B500;
+        background-color: $N0;
+
+        &::after {
+          content: '';
+          background-color: $B500;
+        }
+      }
+    }
+  }
+
+  // 상태 : 라디오버튼 - focus
+  input[type="radio"]:focus {
+    + .#{$prefix}-label-checkradio__helper {
+      border-color: $B400;
+      background-color: $N0;
+    }
+  }
+
+  input[type="radio"]:checked:focus {
+    + .#{$prefix}-label-checkradio__helper {
+      border-color: $B500;
+      background-color: $N0;
+
+      &::after {
+        content: '';
+        background-color: $B500;
+      }
+    }
+  }
+
+  // 상태 : disabled
+  // 상태 : 체크박스 - disabled
+  &.#{$prefix}-label-checkradio--disabled {
+    color: $N70;
+
+    // 체크박스
+    input[type="checkbox"] {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $N40;
+        background-color: $N20;
+      }
+    }
+
+    input[type="checkbox"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $N40;
+        background-color: $N40;
+
+        &::after {
+          content: '';
+          border-right-color: $N0;
+          border-bottom-color: $N0;
+        }
+      }
+    }
+
+    // 라디오 버튼
+    input[type="radio"] {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $N40;
+        background-color: $N20;
+      }
+    }
+
+    input[type="radio"]:checked {
+      + .#{$prefix}-label-checkradio__helper {
+        border-color: $N40;
+        background-color: $N0;
+
+        &::after {
+          content: '';
+          background-color: $N40;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>index - XE NEW Component</title>
+  <title>forms - XE NEW Component</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -94,7 +94,69 @@
             <div id="content" class="content " style="background-color: transparent">
               <!-- 페이지 컨텐츠 들어가는 곳 -->
               
-    index
+    <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
+    <h2 class="title">Forms - input </h2>
+    <!-- 페이지 설명 : class="lead" -->
+    <p class="lead">XE3 새로운 스타일 Forms Input 입니다.</p>
+    <!-- === 항목 한 블럭 === -->
+    <!-- 제목(항목) : class="content-title" -->
+    <h3><span class="content-title">Native</span></h3>
+    <!-- 설명 : p 태그 -->
+    <p>얘네들은 영향을 받으면 안 됨</p>
+    <!-- 예시 : class="example" -->
+    <div class="example">
+      <input type="text">
+    </div>
+    <!-- 코드 : class="code", prism.js 코드 하이라이트 적용 -->
+    <div class="code">
+        <pre><code class="language-html">&lt;input type="text"&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Input Single</span></h3>
+    <p>Input 기본형태</p>
+    <div class="example">
+      <div class="xu-form-group">
+        <input type="text" class="xu-form-input">
+      </div>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;label class="xu-label-checkradio"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
+  &lt;input type="checkbox" checked="checked"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--hover"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(hover)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--focus"&gt;
+  &lt;input type="checkbox" checked="checked"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(focus)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
+  &lt;input type="checkbox" disabled="disabled"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(disabled)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
+  &lt;input type="checkbox" checked="checked" disabled="disabled"&gt;
+  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+  &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked + disabled)&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
   
               <!-- //페이지 컨텐츠 들어가는 곳 -->
             </div>

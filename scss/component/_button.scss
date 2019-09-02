@@ -1,12 +1,14 @@
 .#{$prefix}-button {
   display: inline-block;
   margin: 0;
-  padding: 0 12px;
+  // padding: 0 12px;
+  padding: 8px;
   border: 0 none;
   border-radius: 3px;
   // border: 1px solid transparent;
   font-size: 14px;
-  line-height: 36px;
+  // line-height: 36px;
+  line-height: 20px;
   user-select: none;
   text-align: center;
   text-decoration: none;
@@ -15,6 +17,12 @@
   outline: 0;
   background-color: $transparent;
   color: $N400;
+
+  // 버튼 내부 텍스트
+  .#{$prefix}-button__text {
+    display: inline-block;
+    padding: 0 4px;
+  }
 
   // 공통 적용
   &:not([disabled]) {
@@ -29,13 +37,15 @@
 
   // 사이즈
   &--large {
+    padding: 12px;
     font-size: 16px;
-    line-height: 48px;
+    line-height: 24px;
   }
 
   &--small {
+    padding: 4px;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 20px;
   }
 
   // block 일 때
@@ -68,7 +78,7 @@
   // 이미지(아이콘) 버튼
   &.#{$prefix}-button--icon {
     height: 36px;
-    line-height: 36px;
+    line-height: 20px;
     padding: 8px;
     border-radius: 3px;
     // background-color: $transparent;
@@ -85,14 +95,11 @@
       background-repeat: no-repeat;
       background-size: 20px 20px;
       vertical-align: top;
-    }
 
-    .#{$prefix}-button__icon--pen {
-      background-image: url(../image/icon-pen.svg);
-    }
-
-    .#{$prefix}-button__icon--trash {
-      background-image: url(../image/icon-trash.svg);
+      i {
+        font-size: 20px;
+        vertical-align: top;
+      }
     }
 
     // 배경색 있는 버튼일 때 아이콘 이미지를 흰색으로 적용 (primary, warning, danger, selected)
@@ -100,12 +107,8 @@
     &.#{$prefix}-button--warning,
     &.#{$prefix}-button--danger,
     &.#{$prefix}-button--selected {
-      .#{$prefix}-button__icon--pen {
-        background-image: url(../image/icon-pen-white.svg);
-      }
-
-      .#{$prefix}-button__icon--trash {
-        background-image: url(../image/icon-trash-white.svg);
+      .#{$prefix}-button__icon {
+        color: $N0;
       }
     }
   }

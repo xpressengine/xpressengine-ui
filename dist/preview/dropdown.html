@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>index - XE NEW Component</title>
+  <title>forms - XE NEW Component</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -95,7 +95,58 @@
             <div id="content" class="content " style="background-color: transparent">
               <!-- 페이지 컨텐츠 들어가는 곳 -->
               
-    index
+    <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
+    <h2 class="title">Dropdowns</h2>
+    <!-- 페이지 설명 : class="lead" -->
+    <p class="lead">옵션 리스트 중 값을 선택하는 용도로 사용 됩니다.</p>
+    
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">SelectBox</span></h3>
+    <p>SelectBox system</p>
+    <div class="example">
+      <form>
+        <div class="xu-form-group">
+          <label class="xu-form-group__label" for="dropdownSystem1">selectbox 시스템<em class="xu-form-group__label-required">*</em></label>
+          <div class="xu-form-group__select-box xu-form-group__select-box--icon-right">
+            <span class="xu-form-group__select-box-text">선택하세요.</span>
+            <select id="dropdownSystem1">
+            <option disabled="disabled">선택하세요.</option>
+            <option>xu-form-group__select-box 1</option>
+            <option>xu-form-group__select-box 2</option>
+            <option>xu-form-group__select-box 3</option>
+            <option>xu-form-group__select-box 4</option>
+            </select>
+            <span class="xu-form-group__icon">
+              <i class="xi-angle-down-min"></i>
+            </span>
+          </div>
+          <p class="xu-form-group__validation">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--success">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--error">6글자 이상 입력</p>
+        </div>
+      </form>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
+  &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;selectbox 시스템&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
+  &lt;div class="xu-form-group__select-box xu-form-group__select-box--icon-right"&gt;
+    &lt;label&gt;xu-form-group__select-box 1&lt;/label&gt;
+    &lt;select&gt;
+    &lt;option&gt;xu-form-group__select-box 1&lt;/option&gt;
+    &lt;option&gt;xu-form-group__select-box 2&lt;/option&gt;
+    &lt;option&gt;xu-form-group__select-box 3&lt;/option&gt;
+    &lt;option&gt;xu-form-group__select-box 4&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;span class="xu-form-group__icon"&gt;
+      &lt;i class="xi-angle-down-min"&gt;&lt;/i&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--success"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--error"&gt;6글자 이상 입력&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
   
               <!-- //페이지 컨텐츠 들어가는 곳 -->
             </div>

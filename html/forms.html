@@ -4,64 +4,272 @@
     <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
     <h2 class="title">Forms - input </h2>
     <!-- 페이지 설명 : class="lead" -->
-    <p class="lead">XE3 새로운 스타일 Forms Input 입니다.</p>
-    <!-- === 항목 한 블럭 === -->
-    <!-- 제목(항목) : class="content-title" -->
-    <h3><span class="content-title">Native</span></h3>
-    <!-- 설명 : p 태그 -->
-    <p>얘네들은 영향을 받으면 안 됨</p>
-    <!-- 예시 : class="example" -->
-    <div class="example">
-      <input type="text">
-    </div>
-    <!-- 코드 : class="code", prism.js 코드 하이라이트 적용 -->
-    <div class="code">
-        <pre><code class="language-html">&lt;input type="text"&gt;</code></pre>
-    </div>
-    <!-- === //항목 한 블럭 === -->
+    <p class="lead">XE3 새로운 스타일 Forms Input, Textarea 입니다.</p>
     <!-- === 항목 한 블럭 === -->
     <h3><span class="content-title">Input Single</span></h3>
     <p>Input 기본형태</p>
     <div class="example">
-      <div class="xu-form-group">
-        <input type="text" class="xu-form-input">
-      </div>
+      <form>
+        <div class="xu-form-group">
+          <div class="xu-form-group__input-box">
+            <input type="text" name="componentSingle1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;">
+          </div>
+        </div>
+        <div class="xu-form-group">
+          <div class="xu-form-group__input-box">
+            <input type="text" name="componentSingle2" class="xu-form-group__input" disabled="disabled" placeholder="disabled 입니다." autocomplete="off" style="ime-mode: active;">
+          </div>
+        </div>
+        <div class="xu-form-group">
+          <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
+            <input type="text" name="componentSingle3" class="xu-form-group__input" placeholder="오른쪽 아이콘(버튼)과 함께" autocomplete="off" style="ime-mode: active;">
+            <button type="button" tabindex="-1" class="xu-form-group__icon">
+              <i class="xi-search"></i>
+            </button>
+          </div>
+        </div>
+        <div class="xu-form-group">
+          <div class="xu-form-group__input-box xu-form-group__input-box--icon-left">
+            <input type="text" name="componentSingle4" class="xu-form-group__input" placeholder="왼쪽 아이콘(버튼)과 함께" autocomplete="off" style="ime-mode: active;">
+            <button type="button" tabindex="-1" class="xu-form-group__icon">
+              <i class="xi-search"></i>
+            </button>
+          </div>
+        </div>
+        <div class="xu-form-group">
+          <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
+            <input type="password" name="componentSingle6" class="xu-form-group__input" placeholder="포커스 시 아이콘 노출" autocomplete="off" style="ime-mode: active;">
+            <!-- [D] input focus 될 때 아이콘 노출 되도록 할때 class="xu-form-group__icon--focus" 적용 -->
+            <button type="button" tabindex="-1" class="xu-form-group__icon xu-form-group__icon--focus">
+              <i class="xi-eye"></i>
+            </button>
+          </div>
+        </div>
+        <div class="xu-form-group">
+          <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
+            <input type="text" name="componentSingle5" class="xu-form-group__input" placeholder="오른쪽 아이콘(span)과 함께" autocomplete="off" style="ime-mode: active;">
+            <span class="xu-form-group__icon">
+              <i class="xi-search"></i>
+            </span>
+          </div>
+        </div>
+        <div class="xu-form-group">
+          <div class="xu-form-group__input-box xu-form-group__input-box--icon-left">
+            <input type="text" name="componentSingle6" class="xu-form-group__input" placeholder="왼쪽 아이콘(span)과 함께" autocomplete="off" style="ime-mode: active;">
+            <span class="xu-form-group__icon">
+              <i class="xi-search"></i>
+            </span>
+          </div>
+        </div>
+
+        <fieldset disabled="disabled" style="margin-top: 24px;">
+          <div class="xu-form-group">
+            <div class="xu-form-group__input-box">
+              <input type="text" name="componentSingle7" class="xu-form-group__input" disabled="disabled" placeholder="disabled 입니다." autocomplete="off" style="ime-mode: active;">
+            </div>
+          </div>
+        </fieldset>
+      </form>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;label class="xu-label-checkradio"&gt;
-  &lt;input type="checkbox"&gt;
-  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="xu-label-checkradio"&gt;
-  &lt;input type="checkbox"&gt;
-  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
-  &lt;span class="xu-label-checkradio__text"&gt;체크박스&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="xu-label-checkradio"&gt;
-  &lt;input type="checkbox" checked="checked"&gt;
-  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
-  &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked)&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="xu-label-checkradio xu-label-checkradio--hover"&gt;
-  &lt;input type="checkbox"&gt;
-  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
-  &lt;span class="xu-label-checkradio__text"&gt;체크박스(hover)&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="xu-label-checkradio xu-label-checkradio--focus"&gt;
-  &lt;input type="checkbox" checked="checked"&gt;
-  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
-  &lt;span class="xu-label-checkradio__text"&gt;체크박스(focus)&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
-  &lt;input type="checkbox" disabled="disabled"&gt;
-  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
-  &lt;span class="xu-label-checkradio__text"&gt;체크박스(disabled)&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
-  &lt;input type="checkbox" checked="checked" disabled="disabled"&gt;
-  &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
-  &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked + disabled)&lt;/span&gt;
-&lt;/label&gt;</code></pre>
+        <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__input-box"&gt;
+    &lt;input type="text" name="componentSingle1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__input-box"&gt;
+    &lt;input type="text" name="componentSingle2" class="xu-form-group__input" disabled="disabled" placeholder="disabled 입니다." autocomplete="off" style="ime-mode: active;"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
+    &lt;input type="text" name="componentSingle3" class="xu-form-group__input" placeholder="오른쪽 아이콘(버튼)과 함께" autocomplete="off" style="ime-mode: active;"&gt;
+    &lt;button type="button" tabindex="-1" class="xu-form-group__icon"&gt;
+      &lt;i class="xi-search"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-left"&gt;
+    &lt;input type="text" name="componentSingle4" class="xu-form-group__input" placeholder="왼쪽 아이콘(버튼)과 함께" autocomplete="off" style="ime-mode: active;"&gt;
+    &lt;button type="button" tabindex="-1" class="xu-form-group__icon"&gt;
+      &lt;i class="xi-search"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
+    &lt;input type="password" name="componentSingle6" class="xu-form-group__input" placeholder="포커스 시 아이콘 노출" autocomplete="off" style="ime-mode: active;"&gt;
+    &lt;!-- [D] input focus 될 때 아이콘 노출 되도록 할때 class="xu-form-group__icon--focus" 적용 --&gt;
+    &lt;button type="button" tabindex="-1" class="xu-form-group__icon xu-form-group__icon--focus"&gt;
+      &lt;i class="xi-eye"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
+    &lt;input type="text" name="componentSingle5" class="xu-form-group__input" placeholder="오른쪽 아이콘(span)과 함께" autocomplete="off" style="ime-mode: active;"&gt;
+    &lt;span class="xu-form-group__icon"&gt;
+      &lt;i class="xi-search"&gt;&lt;/i&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-left"&gt;
+    &lt;input type="text" name="componentSingle6" class="xu-form-group__input" placeholder="왼쪽 아이콘(span)과 함께" autocomplete="off" style="ime-mode: active;"&gt;
+    &lt;span class="xu-form-group__icon"&gt;
+      &lt;i class="xi-search"&gt;&lt;/i&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;fieldset disabled="disabled" style="margin-top: 24px;"&gt;
+  &lt;div class="xu-form-group"&gt;
+    &lt;div class="xu-form-group__input-box"&gt;
+      &lt;input type="text" name="componentSingle7" class="xu-form-group__input" disabled="disabled" placeholder="disabled 입니다." autocomplete="off" style="ime-mode: active;"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Label Vertical</span></h3>
+    <p>Input 라벨 세로 형태</p>
+    <div class="example">
+      <form>
+        <div class="xu-form-group">
+          <label class="xu-form-group__label" for="inputLabelVertical1">세로형</label>
+          <div class="xu-form-group__input-box">
+            <input type="text" name="componentVertical1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;">
+          </div>
+          <p class="xu-form-group__validation">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--success">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--error">6글자 이상 입력</p>
+        </div>
+        <div class="xu-form-group">
+          <label class="xu-form-group__label" for="inputLabelVertical2">라벨명<em class="xu-form-group__label-required">*</em></label>
+          <div class="xu-form-group__input-box">
+            <input type="text" name="componentVertical2" class="xu-form-group__input" id="inputLabelVertical2" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;">
+          </div>
+        </div>
+        <div class="xu-form-group">
+          <label class="xu-form-group__label" for="inputLabelVertical3">에러<em class="xu-form-group__label-required">*</em></label>
+          <div class="xu-form-group__input-box">
+            <!-- [D] 벨리데이션 에러 시 class="xu-form-group__input--error" 추가 -->
+            <input type="text" name="componentVertical3" class="xu-form-group__input xu-form-group__input--error" id="inputLabelVertical3" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;">
+          </div>
+          <p class="xu-form-group__validation xu-form-group__validation--error">6글자 이상 입력</p>
+        </div>
+        <div class="xu-form-group">
+          <label class="xu-form-group__label" for="inputLabelVertical4">Success<em class="xu-form-group__label-required">*</em></label>
+          <div class="xu-form-group__input-box">
+            <input type="text" name="componentVertical4" class="xu-form-group__input" id="inputLabelVertical4" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;">
+          </div>
+          <p class="xu-form-group__validation xu-form-group__validation--success">6글자 이상 입력</p>
+        </div>
+      </form>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
+  &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;세로형&lt;/label&gt;
+  &lt;div class="xu-form-group__input-box"&gt;
+    &lt;input type="text" name="componentVertical1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;"&gt;
+  &lt;/div&gt;
+  &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--success"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--error"&gt;6글자 이상 입력&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;label class="xu-form-group__label" for="inputLabelVertical2"&gt;라벨명&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
+  &lt;div class="xu-form-group__input-box"&gt;
+    &lt;input type="text" name="componentVertical2" class="xu-form-group__input" id="inputLabelVertical2" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;label class="xu-form-group__label" for="inputLabelVertical3"&gt;에러&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
+  &lt;div class="xu-form-group__input-box"&gt;
+    &lt;!-- [D] 벨리데이션 에러 시 class="xu-form-group__input--error" 추가 --&gt;
+    &lt;input type="text" name="componentVertical3" class="xu-form-group__input xu-form-group__input--error" id="inputLabelVertical3" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;"&gt;
+  &lt;/div&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--error"&gt;6글자 이상 입력&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;label class="xu-form-group__label" for="inputLabelVertical4"&gt;Success&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
+  &lt;div class="xu-form-group__input-box"&gt;
+    &lt;input type="text" name="componentVertical4" class="xu-form-group__input" id="inputLabelVertical4" placeholder="placeholder 입니다." autocomplete="off" style="ime-mode: active;"&gt;
+  &lt;/div&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--success"&gt;6글자 이상 입력&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Textarea Single</span></h3>
+    <p>Textarea Single</p>
+    <div class="example">
+      <form>
+        <div class="xu-form-group">
+          <div class="xu-form-group__textarea-box">
+            <textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
+  &lt;div class="xu-form-group__textarea-box"&gt;
+    &lt;textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Textarea Vertical</span></h3>
+    <p>Textarea Vertical</p>
+    <div class="example">
+      <form>
+        <div class="xu-form-group">
+          <label class="xu-form-group__label" for="inputLabelVertical1">Vertical</label>
+          <div class="xu-form-group__textarea-box">
+            <textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
+          </div>
+          <p class="xu-form-group__validation">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--success">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--error">6글자 이상 입력</p>
+        </div>
+        <div class="xu-form-group">
+          <label class="xu-form-group__label" for="inputLabelVertical1">Vertical error</label>
+          <div class="xu-form-group__textarea-box">
+            <textarea class="xu-form-group__textarea xu-form-group__textarea--error" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
+          </div>
+          <p class="xu-form-group__validation">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--success">6글자 이상 입력</p>
+          <p class="xu-form-group__validation xu-form-group__validation--error">6글자 이상 입력</p>
+        </div>
+      </form>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
+  &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;Single&lt;/label&gt;
+  &lt;div class="xu-form-group__textarea-box"&gt;
+    &lt;textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--success"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--error"&gt;6글자 이상 입력&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="xu-form-group"&gt;
+  &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;Vertical error&lt;/label&gt;
+  &lt;div class="xu-form-group__textarea-box"&gt;
+    &lt;textarea class="xu-form-group__textarea xu-form-group__textarea--error" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--success"&gt;6글자 이상 입력&lt;/p&gt;
+  &lt;p class="xu-form-group__validation xu-form-group__validation--error"&gt;6글자 이상 입력&lt;/p&gt;
+&lt;/div&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
   </block>

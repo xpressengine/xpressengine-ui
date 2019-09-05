@@ -35,6 +35,10 @@
     box-shadow: 0 0 0 2px rgba($B400, 0.4);
   }
 
+  &:hover {
+    color: $N400;
+  }
+
   // 사이즈
   &--large {
     padding: 12px;

@@ -33,7 +33,8 @@
         background-color: $N0;
       }
 
-      &[disabled], fieldset[disabled] & {
+      &[disabled],
+      fieldset[disabled] & {
         border-color: $N20;
         background-color: $N20;
         cursor: not-allowed;
@@ -43,6 +44,7 @@
       &::-webkit-input-placeholder {
         color: $N70;
       }
+
       &:-ms-input-placeholder {
         color: $N70;
       }

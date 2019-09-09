@@ -45,9 +45,14 @@
         border: 2px solid $B400;
         border-radius: 4px;
         background-color: $N0;
+
+        + .#{$prefix}-form-group__icon--focus {
+          display: block;
+        }
       }
 
-      &[disabled], fieldset[disabled] & {
+      &[disabled],
+      fieldset[disabled] & {
         border-color: $N20;
         background-color: $N20;
         cursor: not-allowed;
@@ -57,18 +62,13 @@
       &::-webkit-input-placeholder {
         color: $N70;
       }
+
       &:-ms-input-placeholder {
         color: $N70;
       }
 
       + .#{$prefix}-form-group__icon--focus {
         display: none;
-      }
-
-      &:focus {
-        + .#{$prefix}-form-group__icon--focus {
-          display: block;
-        }
       }
 
       // 인풋 상태 스타일 (error)

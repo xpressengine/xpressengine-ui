@@ -13,31 +13,6 @@
   vertical-align: top;
   cursor: pointer;
 
-  // 공통 적용
-  // &:not([disabled]) {
-  //   cursor: pointer;
-  // }
-  &--disabled {
-    cursor: default;
-  }
-
-  // // 공통 적용
-  // &:focus:not([disabled]),
-  // &.focus:not([disabled]) {
-  //   box-shadow: 0 0 0 2px rgba($B400, 0.4);
-  // }
-
-  // 사이즈
-  &--large {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  &--small {
-    font-size: 13px;
-    line-height: 20px;
-  }
-
   // 공통 : 체크박스, 라이오버튼
   input[type="checkbox"],
   input[type="radio"] {
@@ -83,8 +58,8 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        width: 4px;
-        height: 7px;
+        width: 6px;
+        height: 9px;
         margin-top: -6px;
         margin-left: -3px;
         border-right: 2px solid #fff;
@@ -93,6 +68,50 @@
         -ms-transform: rotate(40deg);
         transform: rotate(40deg);
       }
+    }
+  }
+
+  // 공통 적용
+  // &:not([disabled]) {
+  //   cursor: pointer;
+  // }
+  &--disabled {
+    cursor: default;
+  }
+
+  // // 공통 적용
+  // &:focus:not([disabled]),
+  // &.focus:not([disabled]) {
+  //   box-shadow: 0 0 0 2px rgba($B400, 0.4);
+  // }
+
+  // 사이즈
+  &--small {
+    font-size: 13px;
+    line-height: 20px;
+
+    .xu-label-checkradio__text {
+      padding-left: 20px;
+    }
+
+    .xu-label-checkradio__helper {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &--large {
+    font-size: 16px;
+    line-height: 20px;
+
+    .xu-label-checkradio__text {
+      padding-left: 28px;
+    }
+
+    .xu-label-checkradio__helper {
+      top: 2px;
+      width: 20px;
+      height: 20px;
     }
   }
 

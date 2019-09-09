@@ -31,7 +31,7 @@
 
   // 공통 적용
   &:focus:not([disabled]),
-  &.focus:not([disabled]) {
+  &.#{$prefix}-button--focus:not([disabled]) {
     box-shadow: 0 0 0 2px rgba($B400, 0.4);
   }
 
@@ -66,16 +66,16 @@
   &--link,
   &--subtle-link {
     &:hover:not([disabled]),
-    &.hover:not([disabled]),
+    &.#{$prefix}-button--hover:not([disabled]),
     &:focus:not([disabled]),
-    &.focus:not([disabled]) {
+    &.#{$prefix}-button--focus:not([disabled]) {
       text-decoration: underline;
       border: 0 none;
     }
   }
 
   // a 태그가 disabled 적용 될 때
-  &.disabled {
+  &.xu-button--disabled {
     pointer-events: none;
   }
 
@@ -131,7 +131,7 @@
       // }
 
       &:hover:not([disabled]),
-      &.hover:not([disabled]) {
+      &.#{$prefix}-button--hover:not([disabled]) {
         @if ($type == 'link') or ($type == 'subtle-link') {
           text-decoration: underline;
           border: 0 none;
@@ -147,20 +147,20 @@
       }
 
       &:focus:not([disabled]),
-      &.focus:not([disabled]) {
+      &.#{$prefix}-button--focus:not([disabled]) {
         background-color: button-color($type, 'focusBackgroundColor');
         text-decoration: none;
         color: button-color($type, 'defaultColor');
       }
 
       &:disabled,
-      &.disabled {
+      &.#{$prefix}-button--disabled {
         color: button-color($type, 'disabledColor');
         background-color: button-color($type, 'disabledBackgroundColor');
       }
 
       &:active:not([disabled]),
-      &.active:not([disabled]) {
+      &.#{$prefix}-button--active:not([disabled]) {
         color: button-color($type, 'activeColor');
         background-color: button-color($type, 'activeBackgroundColor');
       }

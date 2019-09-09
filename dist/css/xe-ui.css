@@ -394,7 +394,7 @@ a:hover, a:focus {
   cursor: pointer;
 }
 
-.xu-button:focus:not([disabled]), .xu-button.focus:not([disabled]) {
+.xu-button:focus:not([disabled]), .xu-button.xu-button--focus:not([disabled]) {
   -webkit-box-shadow: 0 0 0 2px rgba(38, 132, 255, 0.4);
   box-shadow: 0 0 0 2px rgba(38, 132, 255, 0.4);
 }
@@ -424,12 +424,12 @@ a:hover, a:focus {
   margin-top: 4px;
 }
 
-.xu-button--link:hover:not([disabled]), .xu-button--link.hover:not([disabled]), .xu-button--link:focus:not([disabled]), .xu-button--link.focus:not([disabled]), .xu-button--subtle-link:hover:not([disabled]), .xu-button--subtle-link.hover:not([disabled]), .xu-button--subtle-link:focus:not([disabled]), .xu-button--subtle-link.focus:not([disabled]) {
+.xu-button--link:hover:not([disabled]), .xu-button--link.xu-button--hover:not([disabled]), .xu-button--link:focus:not([disabled]), .xu-button--link.xu-button--focus:not([disabled]), .xu-button--subtle-link:hover:not([disabled]), .xu-button--subtle-link.xu-button--hover:not([disabled]), .xu-button--subtle-link:focus:not([disabled]), .xu-button--subtle-link.xu-button--focus:not([disabled]) {
   text-decoration: underline;
   border: 0 none;
 }
 
-.xu-button.disabled {
+.xu-button.xu-button--disabled {
   pointer-events: none;
 }
 
@@ -469,24 +469,24 @@ a:hover, a:focus {
   color: #505f79;
 }
 
-.xu-button--default:hover:not([disabled]), .xu-button--default.hover:not([disabled]) {
+.xu-button--default:hover:not([disabled]), .xu-button--default.xu-button--hover:not([disabled]) {
   text-decoration: none;
   background-color: #ebecf0;
   color: #505f79;
 }
 
-.xu-button--default:focus:not([disabled]), .xu-button--default.focus:not([disabled]) {
+.xu-button--default:focus:not([disabled]), .xu-button--default.xu-button--focus:not([disabled]) {
   background-color: #f4f5f7;
   text-decoration: none;
   color: #505f79;
 }
 
-.xu-button--default:disabled, .xu-button--default.disabled {
+.xu-button--default:disabled, .xu-button--default.xu-button--disabled {
   color: #a5adba;
   background-color: #f4f5f7;
 }
 
-.xu-button--default:active:not([disabled]), .xu-button--default.active:not([disabled]) {
+.xu-button--default:active:not([disabled]), .xu-button--default.xu-button--active:not([disabled]) {
   color: #345bd9;
   background-color: #deebff;
 }
@@ -502,24 +502,24 @@ a:hover, a:focus {
   color: #fff;
 }
 
-.xu-button--primary:hover:not([disabled]), .xu-button--primary.hover:not([disabled]) {
+.xu-button--primary:hover:not([disabled]), .xu-button--primary.xu-button--hover:not([disabled]) {
   text-decoration: none;
   background-color: #2684ff;
   color: #fff;
 }
 
-.xu-button--primary:focus:not([disabled]), .xu-button--primary.focus:not([disabled]) {
+.xu-button--primary:focus:not([disabled]), .xu-button--primary.xu-button--focus:not([disabled]) {
   background-color: #345bd9;
   text-decoration: none;
   color: #fff;
 }
 
-.xu-button--primary:disabled, .xu-button--primary.disabled {
+.xu-button--primary:disabled, .xu-button--primary.xu-button--disabled {
   color: #a5adba;
   background-color: #f4f5f7;
 }
 
-.xu-button--primary:active:not([disabled]), .xu-button--primary.active:not([disabled]) {
+.xu-button--primary:active:not([disabled]), .xu-button--primary.xu-button--active:not([disabled]) {
   color: #fff;
   background-color: #0747a6;
 }
@@ -535,25 +535,25 @@ a:hover, a:focus {
   color: #345bd9;
 }
 
-.xu-button--link:hover:not([disabled]), .xu-button--link.hover:not([disabled]) {
+.xu-button--link:hover:not([disabled]), .xu-button--link.xu-button--hover:not([disabled]) {
   text-decoration: underline;
   border: 0 none;
   background-color: transparent;
   color: #345bd9;
 }
 
-.xu-button--link:focus:not([disabled]), .xu-button--link.focus:not([disabled]) {
+.xu-button--link:focus:not([disabled]), .xu-button--link.xu-button--focus:not([disabled]) {
   background-color: transparent;
   text-decoration: none;
   color: #345bd9;
 }
 
-.xu-button--link:disabled, .xu-button--link.disabled {
+.xu-button--link:disabled, .xu-button--link.xu-button--disabled {
   color: #a5adba;
   background-color: transparent;
 }
 
-.xu-button--link:active:not([disabled]), .xu-button--link.active:not([disabled]) {
+.xu-button--link:active:not([disabled]), .xu-button--link.xu-button--active:not([disabled]) {
   color: #0747a6;
   background-color: transparent;
 }
@@ -569,24 +569,24 @@ a:hover, a:focus {
   color: #344563;
 }
 
-.xu-button--subtle:hover:not([disabled]), .xu-button--subtle.hover:not([disabled]) {
+.xu-button--subtle:hover:not([disabled]), .xu-button--subtle.xu-button--hover:not([disabled]) {
   text-decoration: none;
   background-color: #ebecf0;
   color: #344563;
 }
 
-.xu-button--subtle:focus:not([disabled]), .xu-button--subtle.focus:not([disabled]) {
+.xu-button--subtle:focus:not([disabled]), .xu-button--subtle.xu-button--focus:not([disabled]) {
   background-color: transparent;
   text-decoration: none;
   color: #344563;
 }
 
-.xu-button--subtle:disabled, .xu-button--subtle.disabled {
+.xu-button--subtle:disabled, .xu-button--subtle.xu-button--disabled {
   color: #a5adba;
   background-color: transparent;
 }
 
-.xu-button--subtle:active:not([disabled]), .xu-button--subtle.active:not([disabled]) {
+.xu-button--subtle:active:not([disabled]), .xu-button--subtle.xu-button--active:not([disabled]) {
   color: #345bd9;
   background-color: #deebff;
 }
@@ -602,25 +602,25 @@ a:hover, a:focus {
   color: #6b778c;
 }
 
-.xu-button--subtle-link:hover:not([disabled]), .xu-button--subtle-link.hover:not([disabled]) {
+.xu-button--subtle-link:hover:not([disabled]), .xu-button--subtle-link.xu-button--hover:not([disabled]) {
   text-decoration: underline;
   border: 0 none;
   background-color: transparent;
   color: #6b778c;
 }
 
-.xu-button--subtle-link:focus:not([disabled]), .xu-button--subtle-link.focus:not([disabled]) {
+.xu-button--subtle-link:focus:not([disabled]), .xu-button--subtle-link.xu-button--focus:not([disabled]) {
   background-color: transparent;
   text-decoration: none;
   color: #6b778c;
 }
 
-.xu-button--subtle-link:disabled, .xu-button--subtle-link.disabled {
+.xu-button--subtle-link:disabled, .xu-button--subtle-link.xu-button--disabled {
   color: #a5adba;
   background-color: transparent;
 }
 
-.xu-button--subtle-link:active:not([disabled]), .xu-button--subtle-link.active:not([disabled]) {
+.xu-button--subtle-link:active:not([disabled]), .xu-button--subtle-link.xu-button--active:not([disabled]) {
   color: #505f79;
   background-color: transparent;
 }
@@ -636,24 +636,24 @@ a:hover, a:focus {
   color: #fff;
 }
 
-.xu-button--warning:hover:not([disabled]), .xu-button--warning.hover:not([disabled]) {
+.xu-button--warning:hover:not([disabled]), .xu-button--warning.xu-button--hover:not([disabled]) {
   text-decoration: none;
   background-color: #ffab00;
   color: #fff;
 }
 
-.xu-button--warning:focus:not([disabled]), .xu-button--warning.focus:not([disabled]) {
+.xu-button--warning:focus:not([disabled]), .xu-button--warning.xu-button--focus:not([disabled]) {
   background-color: #f49342;
   text-decoration: none;
   color: #fff;
 }
 
-.xu-button--warning:disabled, .xu-button--warning.disabled {
+.xu-button--warning:disabled, .xu-button--warning.xu-button--disabled {
   color: #a5adba;
   background-color: #f4f5f7;
 }
 
-.xu-button--warning:active:not([disabled]), .xu-button--warning.active:not([disabled]) {
+.xu-button--warning:active:not([disabled]), .xu-button--warning.xu-button--active:not([disabled]) {
   color: #fff;
   background-color: #c05717;
 }
@@ -669,24 +669,24 @@ a:hover, a:focus {
   color: #fff;
 }
 
-.xu-button--danger:hover:not([disabled]), .xu-button--danger.hover:not([disabled]) {
+.xu-button--danger:hover:not([disabled]), .xu-button--danger.xu-button--hover:not([disabled]) {
   text-decoration: none;
   background-color: #ff5630;
   color: #fff;
 }
 
-.xu-button--danger:focus:not([disabled]), .xu-button--danger.focus:not([disabled]) {
+.xu-button--danger:focus:not([disabled]), .xu-button--danger.xu-button--focus:not([disabled]) {
   background-color: #de3618;
   text-decoration: none;
   color: #fff;
 }
 
-.xu-button--danger:disabled, .xu-button--danger.disabled {
+.xu-button--danger:disabled, .xu-button--danger.xu-button--disabled {
   color: #a5adba;
   background-color: #f4f5f7;
 }
 
-.xu-button--danger:active:not([disabled]), .xu-button--danger.active:not([disabled]) {
+.xu-button--danger:active:not([disabled]), .xu-button--danger.xu-button--active:not([disabled]) {
   color: #fff;
   background-color: #bf0711;
 }

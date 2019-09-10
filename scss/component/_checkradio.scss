@@ -3,8 +3,6 @@
   display: inline-block;
   min-width: 16px;
   min-height: 16px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   font-size: 14px;
   line-height: 20px;
   text-align: left;
@@ -46,6 +44,11 @@
   .xu-label-checkradio__text {
     padding-left: 24px;
     font-weight: 400;
+  }
+
+  .xu-label-checkradio__empase {
+    font-weight: 400;
+    color: $N70;
   }
 
   // 항목 : 체크박스 - 체크
@@ -96,6 +99,10 @@
       font-weight: 600;
     }
 
+    .xu-label-checkradio__empase {
+      font-weight: 600;
+    }
+
     .xu-label-checkradio__helper {
       width: 14px;
       height: 14px;
@@ -108,6 +115,10 @@
 
     .xu-label-checkradio__text {
       padding-left: 28px;
+      font-weight: 500;
+    }
+
+    .xu-label-checkradio__empase {
       font-weight: 500;
     }
 

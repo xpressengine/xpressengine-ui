@@ -57,7 +57,7 @@
     display: block;
     width: 100%;
 
-    & + .xu-button--block {
+    & + .#{$prefix}-button--block {
       margin-top: 4px;
     }
   }
@@ -75,8 +75,9 @@
   }
 
   // a 태그가 disabled 적용 될 때
-  &.xu-button--disabled {
+  &.#{$prefix}-button--disabled {
     pointer-events: none;
+    cursor: not-allowed;
   }
 
   // 이미지(아이콘) 버튼

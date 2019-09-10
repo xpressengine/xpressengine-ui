@@ -68,6 +68,7 @@
 
 .xu-button.xu-button--disabled {
   pointer-events: none;
+  cursor: not-allowed;
 }
 
 .xu-button.xu-button--icon {
@@ -338,8 +339,6 @@
   display: inline-block;
   min-width: 16px;
   min-height: 16px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   font-size: 14px;
   line-height: 20px;
   text-align: left;
@@ -381,6 +380,11 @@
   font-weight: 400;
 }
 
+.xu-label-checkradio .xu-label-checkradio__empase {
+  font-weight: 400;
+  color: #a5adba;
+}
+
 .xu-label-checkradio input[type="checkbox"]:checked + .xu-label-checkradio__helper {
   border-color: #345bd9;
   background-color: #345bd9;
@@ -416,6 +420,10 @@
   font-weight: 600;
 }
 
+.xu-label-checkradio--small .xu-label-checkradio__empase {
+  font-weight: 600;
+}
+
 .xu-label-checkradio--small .xu-label-checkradio__helper {
   width: 14px;
   height: 14px;
@@ -428,6 +436,10 @@
 
 .xu-label-checkradio--large .xu-label-checkradio__text {
   padding-left: 28px;
+  font-weight: 500;
+}
+
+.xu-label-checkradio--large .xu-label-checkradio__empase {
   font-weight: 500;
 }
 
@@ -597,7 +609,7 @@
 }
 
 .xu-form-group + .xu-form-group {
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .xu-form-group input::-ms-clear {
@@ -652,6 +664,7 @@
 fieldset[disabled] .xu-form-group .xu-form-group__input-box .xu-form-group__input {
   border-color: #f4f5f7;
   background-color: #f4f5f7;
+  color: #a5adba;
   cursor: not-allowed;
 }
 

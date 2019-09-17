@@ -42,8 +42,10 @@
   }
 
   .xu-label-checkradio__text {
+    display: inline-block;
     padding-left: 24px;
     font-weight: 400;
+    line-height: 20px;
   }
 
   .xu-label-checkradio__empase {
@@ -92,7 +94,6 @@
   // 사이즈
   &--small {
     font-size: 13px;
-    line-height: 20px;
 
     .xu-label-checkradio__text {
       padding-left: 20px;
@@ -111,7 +112,7 @@
 
   &--large {
     font-size: 16px;
-    line-height: 20px;
+    line-height: 24px;
 
     .xu-label-checkradio__text {
       padding-left: 28px;

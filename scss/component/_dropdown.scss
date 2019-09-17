@@ -1,104 +1,104 @@
-.#{$prefix}-form-group {
-  // input 영역 감싸는 부모 스타일
-  .#{$prefix}-form-group__select-box {
-    position: relative;
-    width: 250px;
-    min-width: 80px;
-    max-width: 680px;
-    height: 36px;
-    padding: 7px 12px;
-    border: 1px solid $N40;
-    border-radius: 3px;
-    font-size: 14px;
-    line-height: 28px;
-    letter-spacing: -0.03px;
-    background-color: $N10;
-    color: $N800;
-    outline: none;
+// 드롭다운 스타일
+.#{$prefix}-dropdown,
+.#{$prefix}-dropup,
+.#{$prefix}-dropleft,
+.#{$prefix}-dropright {
+  position: relative;
+  display: inline-block;
+}
 
-    &:hover {
-      background-color: $N20;
+.#{$prefix}-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  margin: 4px 0 0;
+  padding: 8px 0;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  list-style: none;
+  text-align: left;
+  z-index: 1000;
+
+  // 위로 노출
+  .#{$prefix}-dropup & {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  // 왼쪽 노출
+  .#{$prefix}-dropleft & {
+    top: 0;
+    left: auto;
+    right: 100%;
+    margin-top: 0;
+    margin-right: 4px;
+  }
+
+  // 오른쪽 노출
+  .#{$prefix}-dropright & {
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 4px;
+  }
+
+  &.#{$prefix}-dropdown-menu--show {
+    display: block;
+  }
+
+  &.#{$prefix}-dropdown-menu--right {
+    left: auto;
+    right: 0;
+  }
+
+  .#{$prefix}-dropdown-menu__item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &.on {
+      a,
+      button {
+        background-color: #deebff;
+      }
     }
 
-    &:focus {
-      padding: 7px;
-      border: 2px solid $B400;
-      border-radius: 3px;
-      background-color: $N0;
-    }
-
-    &[disabled],
-    fieldset[disabled] & {
-      border-color: $N20;
-      background-color: $N20;
-      cursor: not-allowed;
-    }
-
-    // placeholder 컬러 스타일
-    &::-webkit-input-placeholder {
-      color: $N70;
-    }
-
-    &:-ms-input-placeholder {
-      color: $N70;
-    }
-
-    .#{$prefix}-form-group__select-box-text {
-      overflow: hidden;
+    a,
+    button {
       display: block;
+      width: 100%;
+      padding: 4px 10px;
+      border: 0 none;
       font-size: 14px;
       line-height: 20px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      vertical-align: top;
-    }
-
-    select {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 34px;
-      font-size: 14px;
-      opacity: 0;
-      filter: alpha(opacity=0);
-      -webkit-appearance: none;
-    }
-
-    .#{$prefix}-form-group__icon {
-      position: absolute;
-      top: 50%;
-      width: 20px;
-      height: 20px;
-      margin-top: -10px;
-      padding: 0;
-      border: 0 none;
       background-color: transparent;
+      text-align: left;
+      color: #172b4d;
+      text-decoration: none;
+      cursor: pointer;
 
-      i {
-        font-size: 20px;
-        vertical-align: top;
-        color: $N500;
+      &:hover,
+      &:focus {
+        background-color: #f4f5f7;
+      }
+
+      &:active {
+        background-color: transparent;
+        color: #345bd9;
       }
     }
+  }
 
-    &.#{$prefix}-form-group__select-box--icon-left {
-      padding-left: 40px;
-
-      // select 아이콘
-      .#{$prefix}-form-group__icon {
-        left: 12px;
-      }
-    }
-
-    // 우측 아이콘 위치
-    &.#{$prefix}-form-group__select-box--icon-right {
-      padding-right: 32px;
-
-      // select 아이콘
-      .#{$prefix}-form-group__icon {
-        right: 8px;
-      }
-    }
+  .#{$prefix}-dropdown-menu__divider {
+    width: 100%;
+    height: 1px;
+    margin: 13px 0;
+    background-color: #e6e6e6;
   }
 }

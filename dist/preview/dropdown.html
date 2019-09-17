@@ -95,59 +95,286 @@
             <div id="content" class="content " style="background-color: transparent">
               <!-- 페이지 컨텐츠 들어가는 곳 -->
               
-    <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
-    <h2 class="title">Dropdowns</h2>
-    <!-- 페이지 설명 : class="lead" -->
-    <p class="lead">옵션 리스트 중 값을 선택하는 용도로 사용 됩니다.</p>
-    
-    <!-- === 항목 한 블럭 === -->
-    <h3><span class="content-title">SelectBox</span></h3>
-    <p>SelectBox system</p>
-    <div class="example">
-      <form>
-        <div class="xu-form-group">
-          <label class="xu-form-group__label" for="dropdownSystem1">selectbox 시스템<em class="xu-form-group__label-required">*</em></label>
-          <div class="xu-form-group__select-box xu-form-group__select-box--icon-right">
-            <span class="xu-form-group__select-box-text">선택하세요.</span>
-            <select id="dropdownSystem1">
-            <option disabled="disabled">선택하세요.</option>
-            <option>xu-form-group__select-box 1</option>
-            <option>xu-form-group__select-box 2</option>
-            <option>xu-form-group__select-box 3</option>
-            <option>xu-form-group__select-box 4</option>
-            </select>
-            <span class="xu-form-group__icon">
-              <i class="xi-angle-down-min"></i>
-            </span>
-          </div>
-          <p class="xu-form-group__validation">6글자 이상 입력</p>
-          <p class="xu-form-group__validation xu-form-group__validation--success">6글자 이상 입력</p>
-          <p class="xu-form-group__validation xu-form-group__validation--error">6글자 이상 입력</p>
+        <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
+        <h2 class="title">Dropdowns</h2>
+        <!-- 페이지 설명 : class="lead" -->
+        <p class="lead">옵션 리스트 중 값을 선택하는 용도로 사용 됩니다.</p>
+
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Dropdowns</span></h3>
+        <p>Dropdowns</p>
+        <div class="example">
+
+            <!--
+                아래: xu-dropdown, 위: xu-dropup, 좌측, 우측 기준(align) 은 gkeks dropdown-menu 에서 dropdown-menu--left, dropdown-menu--right 로 구분 (부트 스트랩 참고)
+                좌: xu-dropleft, 우: xu-dropright
+            --->
+            <div class="xu-dropdown">
+                <button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown">
+                    <span class="xu-button__text">dropdown</span>
+                </button>
+                <ul class="xu-dropdown-menu">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <!-- 선택 일 때 class="on" 추가 -->
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </form>
-    </div>
-    <div class="code">
-        <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
-  &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;selectbox 시스템&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-  &lt;div class="xu-form-group__select-box xu-form-group__select-box--icon-right"&gt;
-    &lt;label&gt;xu-form-group__select-box 1&lt;/label&gt;
-    &lt;select&gt;
-    &lt;option&gt;xu-form-group__select-box 1&lt;/option&gt;
-    &lt;option&gt;xu-form-group__select-box 2&lt;/option&gt;
-    &lt;option&gt;xu-form-group__select-box 3&lt;/option&gt;
-    &lt;option&gt;xu-form-group__select-box 4&lt;/option&gt;
-    &lt;/select&gt;
-    &lt;span class="xu-form-group__icon"&gt;
-      &lt;i class="xi-angle-down-min"&gt;&lt;/i&gt;
-    &lt;/span&gt;
-  &lt;/div&gt;
-  &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
-  &lt;p class="xu-form-group__validation xu-form-group__validation--success"&gt;6글자 이상 입력&lt;/p&gt;
-  &lt;p class="xu-form-group__validation xu-form-group__validation--error"&gt;6글자 이상 입력&lt;/p&gt;
+        <div class="code">
+            <pre><code class="language-html">&lt;div class="xu-dropdown"&gt;
+    &lt;button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown"&gt;
+        &lt;span class="xu-button__text"&gt;dropdown&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="xu-dropdown-menu"&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;a href="#"&gt;PDF 다운로드&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item on"&gt;
+            &lt;a href="#"&gt;기본이력서 설정&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__divider"&gt;&lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;button type="button"&gt;삭제&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
-    </div>
-    <!-- === //항목 한 블럭 === -->
-  
+        </div>
+        <!-- === //항목 한 블럭 === -->
+
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Dropdowns - alignment</span></h3>
+        <p>Dropdowns 오른쪽 기준</p>
+        <div class="example">
+            <div class="xu-dropdown" style="margin-left: 100px;">
+                <button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown">
+                    <span class="xu-button__text">dropdown right</span>
+                </button>
+                <ul class="xu-dropdown-menu xu-dropdown-menu--right xu-dropdown-menu--open">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            <pre><code class="language-html">&lt;div class="xu-dropdown" style="margin-left: 100px;"&gt;
+    &lt;button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown"&gt;
+        &lt;span class="xu-button__text"&gt;dropdown right&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="xu-dropdown-menu xu-dropdown-menu--right xu-dropdown-menu--open"&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;a href="#"&gt;PDF 다운로드&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item on"&gt;
+            &lt;a href="#"&gt;기본이력서 설정&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__divider"&gt;&lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;button type="button"&gt;삭제&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <!-- === //항목 한 블럭 === -->
+
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Dropdowns - dropup</span></h3>
+        <p>Dropdowns dropup</p>
+        <div class="example">
+            <div class="xu-dropup" style="margin-left: 100px; margin-top: 100px;">
+                <button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown">
+                    <span class="xu-button__text">dropup</span>
+                </button>
+                <ul class="xu-dropdown-menu">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            <pre><code class="language-html">&lt;div class="xu-dropup" style="margin-left: 100px; margin-top: 100px;"&gt;
+    &lt;button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown"&gt;
+        &lt;span class="xu-button__text"&gt;dropup&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="xu-dropdown-menu"&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;a href="#"&gt;PDF 다운로드&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item on"&gt;
+            &lt;a href="#"&gt;기본이력서 설정&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__divider"&gt;&lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;button type="button"&gt;삭제&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <!-- === //항목 한 블럭 === -->
+
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Dropdowns - dropup alignment</span></h3>
+        <p>Dropdowns dropup right</p>
+        <div class="example">
+            <div class="xu-dropup" style="margin-left: 100px; margin-top: 100px;">
+                <button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown">
+                    <span class="xu-button__text">dropup right</span>
+                </button>
+                <ul class="xu-dropdown-menu xu-dropdown-menu--right">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            <pre><code class="language-html">&lt;div class="xu-dropup" style="margin-left: 100px; margin-top: 100px;"&gt;
+    &lt;button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown"&gt;
+        &lt;span class="xu-button__text"&gt;dropup right&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="xu-dropdown-menu xu-dropdown-menu--right"&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;a href="#"&gt;PDF 다운로드&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item on"&gt;
+            &lt;a href="#"&gt;기본이력서 설정&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__divider"&gt;&lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;button type="button"&gt;삭제&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <!-- === //항목 한 블럭 === -->
+
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Dropdowns - dropleft</span></h3>
+        <p>Dropdowns dropleft</p>
+        <div class="example">
+            <div class="xu-dropleft" style="margin-left: 100px;">
+                <button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown">
+                    <span class="xu-button__text">dropleft</span>
+                </button>
+                <ul class="xu-dropdown-menu">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            <pre><code class="language-html">&lt;div class="xu-dropleft" style="margin-left: 100px;"&gt;
+    &lt;button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown"&gt;
+        &lt;span class="xu-button__text"&gt;dropleft&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="xu-dropdown-menu"&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;a href="#"&gt;PDF 다운로드&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item on"&gt;
+            &lt;a href="#"&gt;기본이력서 설정&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__divider"&gt;&lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;button type="button"&gt;삭제&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <!-- === //항목 한 블럭 === -->
+
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Dropdowns - dropright</span></h3>
+        <p>Dropdowns dropright</p>
+        <div class="example">
+            <div class="xu-dropright" style="margin-left: 100px;">
+                <button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown">
+                    <span class="xu-button__text">dropright</span>
+                </button>
+                <ul class="xu-dropdown-menu">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="code">
+            <pre><code class="language-html">&lt;div class="xu-dropright" style="margin-left: 100px;"&gt;
+    &lt;button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown"&gt;
+        &lt;span class="xu-button__text"&gt;dropright&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;ul class="xu-dropdown-menu"&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;a href="#"&gt;PDF 다운로드&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item on"&gt;
+            &lt;a href="#"&gt;기본이력서 설정&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__divider"&gt;&lt;/li&gt;
+        &lt;li class="xu-dropdown-menu__item"&gt;
+            &lt;button type="button"&gt;삭제&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <!-- === //항목 한 블럭 === -->
+
+    <script>
+
+        $('button').click(function() {
+            var dataToggle = $(this).attr('data-toggle');
+            if(dataToggle == 'xu-dropdown') {
+                $(this).siblings('.xu-dropdown-menu').addClass('xu-dropdown-menu--show');
+            }
+        });
+
+    </script>
+    
               <!-- //페이지 컨텐츠 들어가는 곳 -->
             </div>
         </div>

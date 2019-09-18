@@ -35,29 +35,30 @@
     <h3><span class="content-title">기본형</span></h3>
     <p>버튼 기본형태</p>
     <div class="example">
-      <button type="button" class="xu-button xu-button--default">
-        <span class="xu-button__text">(default)</span></button>
-      <button type="button" class="xu-button xu-button--primary">
-        <span class="xu-button__text">primary</span>
-      </button>
-      <button type="button" class="xu-button xu-button--link">
-        <span class="xu-button__text">link</span>
-      </button>
-      <button type="button" class="xu-button xu-button--subtle">
-        <span class="xu-button__text">subtle</span>
-      </button>
-      <button type="button" class="xu-button xu-button--subtle-link">
-        <span class="xu-button__text">subtle-link</span>
-      </button>
-      <button type="button" class="xu-button xu-button--warning">
-        <span class="xu-button__text">warning</span>
-      </button>
-      <button type="button" class="xu-button xu-button--danger">
-        <span class="xu-button__text">danger</span>
-      </button>
-      <button type="button" class="xu-button xu-button--default xu-button--selected">
-        <span class="xu-button__text">selected all</span>
-      </button>
+        <button type="button" class="xu-button xu-button--default">
+            <span class="xu-button__text">(default)</span>
+        </button>
+        <button type="button" class="xu-button xu-button--primary">
+            <span class="xu-button__text">primary</span>
+        </button>
+        <button type="button" class="xu-button xu-button--link">
+            <span class="xu-button__text">link</span>
+        </button>
+        <button type="button" class="xu-button xu-button--subtle">
+            <span class="xu-button__text">subtle</span>
+        </button>
+        <button type="button" class="xu-button xu-button--subtle-link">
+            <span class="xu-button__text">subtle-link</span>
+        </button>
+        <button type="button" class="xu-button xu-button--warning">
+            <span class="xu-button__text">warning</span>
+        </button>
+        <button type="button" class="xu-button xu-button--danger">
+            <span class="xu-button__text">danger</span>
+        </button>
+        <button type="button" class="xu-button xu-button--default xu-button--selected">
+            <span class="xu-button__text">selected all</span>
+        </button>
     </div>
     <div class="code">
         <pre><code class="language-html">&lt;button type="button" class="xu-button xu-button--default"&gt;
@@ -284,6 +285,151 @@
 &lt;/button&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
+
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Radio button group</span></h3>
+    <p>
+        Radio button을 버튼 그룹으로 표현하여 활용할 수 있습니다. 툴바, 페이지네이션 등에서 활용할 수 있습니다.
+    </p>
+    <div class="example">
+
+        <div class="xu-button-group--radio">
+            <!-- [D] 라디오 버튼 그룹에서 선택 시 class="xu-button--selected" 추가 -->
+            <button type="button" class="xu-button xu-button--default xu-button--selected">
+                <span class="xu-button__text">남자</span>
+            </button>
+            <button type="button" class="xu-button xu-button--default">
+                <span class="xu-button__text">여자</span>
+            </button>
+            <button type="button" class="xu-button xu-button--default">
+                <span class="xu-button__text">그외</span>
+            </button>
+        </div>
+
+        <div class="xu-button-group--radio" style="margin-left: 50px;">
+            <button type="button" class="xu-button xu-button--default xu-button--icon xu-button--selected">
+                <span class="xu-button__icon">
+                    <i class="xi-pen"></i>
+                </span>
+            </button>
+            <button type="button" class="xu-button xu-button--default xu-button--icon">
+                <span class="xu-button__icon">
+                    <i class="xi-list"></i>
+                </span>
+            </button>
+            <button type="button" class="xu-button xu-button--default xu-button--icon">
+                <span class="xu-button__icon">
+                    <i class="xi-align-right"></i>
+                </span>
+            </button>
+        </div>
+
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;div class="xu-button-group--radio"&gt;
+    &lt;!-- [D] 라디오 버튼 그룹에서 선택 시 class="xu-button--selected" 추가 --&gt;
+    &lt;button type="button" class="xu-button xu-button--default xu-button--selected"&gt;
+        &lt;span class="xu-button__text"&gt;남자&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default"&gt;
+        &lt;span class="xu-button__text"&gt;여자&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default"&gt;
+        &lt;span class="xu-button__text"&gt;그외&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div class="xu-button-group--radio" style="margin-left: 50px;"&gt;
+    &lt;button type="button" class="xu-button xu-button--default xu-button--icon xu-button--selected"&gt;
+        &lt;span class="xu-button__icon"&gt;
+            &lt;i class="xi-pen"&gt;&lt;/i&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default xu-button--icon"&gt;
+        &lt;span class="xu-button__icon"&gt;
+            &lt;i class="xi-list"&gt;&lt;/i&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default xu-button--icon"&gt;
+        &lt;span class="xu-button__icon"&gt;
+            &lt;i class="xi-align-right"&gt;&lt;/i&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+
+    <!-- === 항목 한 블럭 === -->
+    <h3><span class="content-title">Button group</span></h3>
+    <p>
+        버튼 그룹은 유저가 자주 사용하는 관련 작업에 인지를 돕는 역할을 합니다. 여러 버튼 사이에 밀접한 관계가 있는 경우 그룹화된 버튼을 사용할 것을 권장합니다.
+        <br>
+        일반 버튼 그룹을 ‘Radio button group’과 혼용하여 사용하지 않도록 유의하여야 합니다.
+    </p>
+    <div class="example">
+        <div class="xu-button-group" role="group">
+            <!-- [D] 라디오 버튼 그룹에서 선택 시 class="xu-button--selected" 추가 -->
+            <button type="button" class="xu-button xu-button--default">
+                <span class="xu-button__text">남자</span>
+            </button>
+            <button type="button" class="xu-button xu-button--default">
+                <span class="xu-button__text">여자</span>
+            </button>
+            <button type="button" class="xu-button xu-button--default">
+                <span class="xu-button__text">그외</span>
+            </button>
+        </div>
+        <div class="xu-button-group" role="group" style="margin-left: 50px;">
+            <button type="button" class="xu-button xu-button--default xu-button--icon">
+                <span class="xu-button__icon">
+                    <i class="xi-pen"></i>
+                </span>
+            </button>
+            <button type="button" class="xu-button xu-button--default xu-button--icon">
+                <span class="xu-button__icon">
+                    <i class="xi-list"></i>
+                </span>
+            </button>
+            <button type="button" class="xu-button xu-button--default xu-button--icon">
+                <span class="xu-button__icon">
+                    <i class="xi-align-right"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="code">
+        <pre><code class="language-html">&lt;div class="xu-button-group" role="group"&gt;
+    &lt;!-- [D] 라디오 버튼 그룹에서 선택 시 class="xu-button--selected" 추가 --&gt;
+    &lt;button type="button" class="xu-button xu-button--default"&gt;
+        &lt;span class="xu-button__text"&gt;남자&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default"&gt;
+        &lt;span class="xu-button__text"&gt;여자&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default"&gt;
+        &lt;span class="xu-button__text"&gt;그외&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="xu-button-group" role="group" style="margin-left: 50px;"&gt;
+    &lt;button type="button" class="xu-button xu-button--default xu-button--icon"&gt;
+        &lt;span class="xu-button__icon"&gt;
+            &lt;i class="xi-pen"&gt;&lt;/i&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default xu-button--icon"&gt;
+        &lt;span class="xu-button__icon"&gt;
+            &lt;i class="xi-list"&gt;&lt;/i&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button type="button" class="xu-button xu-button--default xu-button--icon"&gt;
+        &lt;span class="xu-button__icon"&gt;
+            &lt;i class="xi-align-right"&gt;&lt;/i&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <!-- === //항목 한 블럭 === -->
+
     <!-- === 항목 한 블럭 === -->
     <!-- <h3><span class="content-title">Icon and Label</span></h3>
     <p>

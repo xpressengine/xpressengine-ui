@@ -80,7 +80,7 @@
           <input type="checkbox" disabled="disabled">
           <span class="xu-label-checkradio__helper"></span>
           <span class="xu-label-checkradio__text">체크박스(disabled)</span>
-        </label>  
+        </label>
       </div>
       <div>
         <label class="xu-label-checkradio xu-label-checkradio--disabled">
@@ -181,9 +181,40 @@
       </div>
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;button class="xu-button xu-button--primary"&gt;default&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary xu-button--small"&gt;small&lt;/button&gt;
-&lt;button class="xu-button xu-button--primary xu-button--large"&gt;large&lt;/button&gt;</code></pre>
+        <pre><code class="language-html">&lt;label class="xu-label-checkradio"&gt;
+    &lt;input type="radio" name="xuComponent"&gt;
+    &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
+    &lt;input type="radio" name="xuComponent"&gt;
+    &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+    &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
+    &lt;input type="radio" name="xuComponent" checked="checked"&gt;
+    &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+    &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼(checked)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--hover"&gt;
+    &lt;input type="radio" name="xuComponentHover" checked="checked"&gt;
+    &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+    &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼(hover)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--focus"&gt;
+    &lt;input type="radio" name="xuComponentFocus"&gt;
+    &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+    &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼(focus)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
+    &lt;input type="radio" name="xuComponentDisabled" disabled="disabled"&gt;
+    &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+    &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼(disabled)&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--disabled"&gt;
+    &lt;input type="radio" name="xuComponentDisabled" disabled="disabled" checked="checked"&gt;
+    &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
+    &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼(disabled + checked)&lt;/span&gt;
+&lt;/label&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
 
@@ -233,51 +264,39 @@
           <span class="xu-label-checkradio__text">라디오 버튼(checked) size large</span>
         </label>
       </div>
-      
+
     </div>
     <div class="code">
-        <pre><code class="language-html">&lt;div&gt;
-  &lt;label class="xu-label-checkradio xu-label-checkradio--small"&gt;
+        <pre><code class="language-html">&lt;label class="xu-label-checkradio xu-label-checkradio--small"&gt;
     &lt;input type="checkbox"&gt;
     &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
     &lt;span class="xu-label-checkradio__text"&gt;체크박스 size small &lt;span class="xu-label-checkradio__empase"&gt;(필수)&lt;/span&gt;&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;label class="xu-label-checkradio"&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
     &lt;input type="checkbox" checked="checked"&gt;
     &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
     &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked) size default &lt;span class="xu-label-checkradio__empase"&gt;(필수)&lt;/span&gt;&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;label class="xu-label-checkradio xu-label-checkradio--large"&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--large"&gt;
     &lt;input type="checkbox" checked="checked"&gt;
     &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
     &lt;span class="xu-label-checkradio__text"&gt;체크박스(checked) size large &lt;span class="xu-label-checkradio__empase"&gt;(필수)&lt;/span&gt;&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;label class="xu-label-checkradio xu-label-checkradio--small"&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--small"&gt;
     &lt;input type="radio" name="xuComponent"&gt;
     &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
     &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼 size small&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;label class="xu-label-checkradio"&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio"&gt;
     &lt;input type="radio" name="xuComponent"&gt;
     &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
     &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼 size default&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;label class="xu-label-checkradio xu-label-checkradio--large"&gt;
+&lt;/label&gt;
+&lt;label class="xu-label-checkradio xu-label-checkradio--large"&gt;
     &lt;input type="radio" name="xuComponent" checked="checked"&gt;
     &lt;span class="xu-label-checkradio__helper"&gt;&lt;/span&gt;
     &lt;span class="xu-label-checkradio__text"&gt;라디오 버튼(checked) size large&lt;/span&gt;
-  &lt;/label&gt;
-&lt;/div&gt;</code></pre>
+&lt;/label&gt;</code></pre>
     </div>
     <!-- === //항목 한 블럭 === -->
   </block>

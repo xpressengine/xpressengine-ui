@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../css/xe-ui.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script src="../js/xu-component.js"></script>
 </head>
 
 <body>
@@ -110,9 +111,14 @@
                 좌: xu-dropleft, 우: xu-dropright
             --->
             <div class="xu-dropdown">
+                <!--
+                    [D] 버튼이 class="xu-button" 일 경우 선택 시 class="xu-button--selected" 추가, 해제 시 class="xu-button--selected" 제거
+                    버튼이 컴포넌트 버튼이 아닐 경우에는 class="xu-button--selected" 를 붙이지 않는다.
+                -->
                 <button type="button" class="xu-button xu-button--default" data-toggle="xu-dropdown">
                     <span class="xu-button__text">dropdown</span>
                 </button>
+                <!-- [D] xu-dropdown-menu 노출 시 class="xu-dropdown-menu--show" 추가 -->
                 <ul class="xu-dropdown-menu">
                     <li class="xu-dropdown-menu__item">
                         <a href="#">PDF 다운로드</a>
@@ -127,6 +133,49 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- 열린 상태 -->
+            <div class="xu-dropdown" style="margin-left: 100px;">
+                <button type="button" class="xu-button xu-button--default xu-button--selected" data-toggle="xu-dropdown">
+                    <span class="xu-button__text">dropdown</span>
+                </button>
+                <ul class="xu-dropdown-menu xu-dropdown-menu--show">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <!-- 선택 일 때 class="on" 추가 -->
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- //열린 상태 -->
+
+            <!-- 아이콘 버튼 -->
+            <div class="xu-dropdown" style="margin-left: 100px;">
+                <button type="button" class="xu-button xu-button--subtle xu-button--icon" data-toggle="xu-dropdown">
+                    <span class="xu-button__icon">
+                        <i class="xi-ellipsis-h"></i>
+                    </span>
+                </button>
+                <ul class="xu-dropdown-menu">
+                    <li class="xu-dropdown-menu__item">
+                        <a href="#">PDF 다운로드</a>
+                    </li>
+                    <li class="xu-dropdown-menu__item on">
+                        <a href="#">기본이력서 설정</a>
+                    </li>
+                    <li class="xu-dropdown-menu__divider"></li>
+                    <li class="xu-dropdown-menu__item">
+                        <button type="button">삭제</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- //아이콘 버튼 -->
         </div>
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-dropdown"&gt;
@@ -364,16 +413,40 @@
         </div>
         <!-- === //항목 한 블럭 === -->
 
-    <script>
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Dropdowns - dropdown menu</span></h3>
+        <p>드롭다운 메뉴 구조, 메뉴 구분자는 class="xu-dropdown-menu__divider" 를 사용한다.</p>
+        <div class="example">
 
-        $('button').click(function() {
-            var dataToggle = $(this).attr('data-toggle');
-            if(dataToggle == 'xu-dropdown') {
-                $(this).siblings('.xu-dropdown-menu').addClass('xu-dropdown-menu--show');
-            }
-        });
+            <ul class="xu-dropdown-menu" style="display:inline-block; position: static;">
+                <li class="xu-dropdown-menu__item">
+                    <a href="#">PDF 다운로드</a>
+                </li>
+                <li class="xu-dropdown-menu__item on">
+                    <a href="#">기본이력서 설정</a>
+                </li>
+                <li class="xu-dropdown-menu__divider"></li>
+                <li class="xu-dropdown-menu__item">
+                    <button type="button">삭제</button>
+                </li>
+            </ul>
 
-    </script>
+        </div>
+        <div class="code">
+            <pre><code class="language-html">&lt;ul class="xu-dropdown-menu"&gt;
+    &lt;li class="xu-dropdown-menu__item"&gt;
+        &lt;a href="#"&gt;PDF 다운로드&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="xu-dropdown-menu__item on"&gt;
+        &lt;a href="#"&gt;기본이력서 설정&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="xu-dropdown-menu__divider"&gt;&lt;/li&gt;
+    &lt;li class="xu-dropdown-menu__item"&gt;
+        &lt;button type="button"&gt;삭제&lt;/button&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+        <!-- === //항목 한 블럭 === -->
     
               <!-- //페이지 컨텐츠 들어가는 곳 -->
             </div>

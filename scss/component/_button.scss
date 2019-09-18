@@ -174,3 +174,42 @@
     }
   }
 }
+
+// 버튼그룹
+.#{$prefix}-button-group {
+  display: inline-block;
+}
+
+// 버튼그룹 (라디오)
+.#{$prefix}-button-group--radio {
+  display: inline-block;
+
+  .#{$prefix}-button {
+    float: left;
+    margin: 0 1px;
+    border-radius: 0;
+
+    &.#{$prefix}-button--selected {
+      background-color: #345bd9 !important;
+      color: #fff !important;
+    }
+
+    &:first-child {
+      margin-left: 0;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

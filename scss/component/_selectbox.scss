@@ -1,4 +1,28 @@
 .#{$prefix}-form-group {
+  // --- size (small, large) ---
+  &.#{$prefix}-form-group--small {
+    .#{$prefix}-form-group__select-box {
+      height: 28px;
+
+      select {
+        height: 28px;
+        line-height: 27px;
+      }
+    }
+  }
+
+  &.#{$prefix}-form-group--large {
+    .#{$prefix}-form-group__select-box {
+      height: 48px;
+
+      select {
+        height: 48px;
+        line-height: 47px;
+      }
+    }
+  }
+  // --- //size (small, large) ---
+
   // input 영역 감싸는 부모 스타일
   .#{$prefix}-form-group__select-box {
     position: relative;
@@ -59,7 +83,7 @@
       left: 0;
       width: 100%;
       height: 34px;
-      padding: 0 32px 0 12px;
+      padding: 0 44px 0 12px;
       font-size: 14px;
       line-height: 33px;
       border: 0 none;
@@ -90,7 +114,7 @@
     }
 
     &.#{$prefix}-form-group__select-box--icon-left {
-      padding-left: 40px;
+      padding-left: 44px;
 
       // select 아이콘
       .#{$prefix}-form-group__icon {
@@ -100,11 +124,11 @@
 
     // 우측 아이콘 위치
     &.#{$prefix}-form-group__select-box--icon-right {
-      padding-right: 32px;
+      padding-right: 44px;
 
       // select 아이콘
       .#{$prefix}-form-group__icon {
-        right: 8px;
+        right: 12px;
       }
     }
   }

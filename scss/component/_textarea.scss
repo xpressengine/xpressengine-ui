@@ -21,6 +21,9 @@
       outline: none;
       resize: none;
       vertical-align: top;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
 
       &:hover {
         background-color: $N20;

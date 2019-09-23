@@ -134,43 +134,47 @@
       &:hover:not([disabled]),
       &.#{$prefix}-button--hover:not([disabled]) {
         @if ($type == 'link') or ($type == 'subtle-link') {
-          text-decoration: underline;
-          border: 0 none;
+          .#{$prefix}-button__text {
+            text-decoration: underline;
+            border: 0 none;
+          }
         }
 
         @else {
-          text-decoration: none;
+          .#{$prefix}-button__text {
+            text-decoration: none;
+          }
         }
 
-        background-color: button-color($type, 'hoverBackgroundColor');
         // text-decoration: none;
-        color: button-color($type, 'defaultColor');
+        background-color: button-color($type, 'hoverBackgroundColor');
+        color: button-color($type, 'hoverColor');
       }
 
       &:focus:not([disabled]),
       &.#{$prefix}-button--focus:not([disabled]) {
-        background-color: button-color($type, 'focusBackgroundColor');
         text-decoration: none;
-        color: button-color($type, 'defaultColor');
+        background-color: button-color($type, 'focusBackgroundColor');
+        color: button-color($type, 'focusColor');
       }
 
       &:disabled,
       &.#{$prefix}-button--disabled {
-        color: button-color($type, 'disabledColor');
         background-color: button-color($type, 'disabledBackgroundColor');
+        color: button-color($type, 'disabledColor');
       }
 
       &:active:not([disabled]),
       &.#{$prefix}-button--active:not([disabled]) {
-        color: button-color($type, 'activeColor');
         background-color: button-color($type, 'activeBackgroundColor');
+        color: button-color($type, 'activeColor');
       }
     }
 
     // 선택한 상태일 때 각 버튼에서 class="xu-button--selected" 를 추가
     &--#{$type}.#{$prefix}-button--selected {
-      background-color: $N700 !important;
-      color: $N0 !important;
+      background-color: button-color($type, 'selectedBackgroundColor') !important;
+      color: button-color($type, 'selectedColor') !important;
     }
   }
 }

@@ -64,6 +64,9 @@
       background-color: $N10;
       color: $N800;
       outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
 
       &:hover {
         background-color: $N20;

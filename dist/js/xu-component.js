@@ -32,7 +32,34 @@ $(function () {
 
   // 버튼 Radio button group (라디오 버튼 클릭시 버튼 변경만 적용)
   $('.xu-button-group--radio .xu-button').click(function() {
-    $(this).closest('.xu-button-group--radio').find('.xu-button').removeClass('xu-button--selected');
-    $(this).addClass('xu-button--selected');
+    $(this).closest('.xu-button-group--radio').find('.xu-button').removeClass('xu-button--selected')
+    $(this).addClass('xu-button--selected')
   })
+
+  // 패스워드 보기, 안보기 버튼 기능
+  passwordViewButton()
 });
+
+// 패스워드 보기, 안보기 버튼 기능
+function passwordViewButton () {
+  $('[data-password]').on('click', function() {
+    var inputPassword = $(this).siblings('input')
+    var passwordIcon = $(this).find('i').attr('class');
+    var strType = '';
+
+    if($(this).attr('data-password') == 'xu-password') {
+      strType = 'text';
+    } else if($(this).attr('data-password') == 'xu-text'){
+      strType = 'password';
+    }
+
+    if(passwordIcon == 'xi-eye') {
+      $(this).find('i').removeClass().addClass('xi-eye-off');
+    } else {
+      $(this).find('i').removeClass().addClass('xi-eye');
+    }
+
+    inputPassword.attr('type', strType)
+    $(this).attr('data-password', 'xu-' + strType)
+  })
+}

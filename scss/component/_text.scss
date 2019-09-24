@@ -1,0 +1,32 @@
+.#{$prefix}-text {
+  color: $N800 !important;
+
+  &--primary {
+    color: $brand-primary !important;
+  }
+
+  &--success {
+    color: $brand-success !important;
+  }
+
+  &--positive {
+    color: $brand-positive !important;
+  }
+
+  &--warning {
+    color: $brand-warning !important;
+  }
+
+  &--danger,
+  &--error {
+    color: $brand-danger !important;
+  }
+
+  &--fail {
+    color: $brand-fail !important;
+  }
+
+  &--black {
+    color: $brand-black !important;
+  }
+}

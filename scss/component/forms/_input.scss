@@ -191,10 +191,13 @@
     padding: 0;
     font-size: 12px;
     line-height: 16px;
-    color: $N90;
 
     &:first-of-type {
       padding-top: 6px;
+    }
+
+    &.#{$prefix}-text {
+      color: $N90 !important;
     }
 
     &.#{$prefix}-form-group__validation--success {

@@ -1,63 +1,119 @@
+// .#{$prefix}-form-group {
+//   // input 영역 감싸는 부모 스타일
+//   .#{$prefix}-form-group__textarea-box {
+//     position: relative;
+//     width: 250px;
+//     min-width: 80px;
+//     max-width: 680px;
+
+//     // input 스타일
+//     .#{$prefix}-form-group__textarea {
+//       width: 100%;
+//       height: 80px;
+//       padding: 8px;
+//       border: 1px solid $N40;
+//       border-radius: 3px;
+//       font-size: 14px;
+//       line-height: 20px;
+//       letter-spacing: -0.03px;
+//       background-color: $N10;
+//       color: $N800;
+//       outline: none;
+//       resize: none;
+//       vertical-align: top;
+//       -webkit-appearance: none;
+//       -moz-appearance: none;
+//       appearance: none;
+
+//       &:hover {
+//         background-color: $N20;
+//       }
+
+//       &:focus {
+//         padding: 7px;
+//         border: 2px solid $B400;
+//         border-radius: 3px;
+//         background-color: $N0;
+//       }
+
+//       &[disabled],
+//       fieldset[disabled] & {
+//         border-color: $N20;
+//         background-color: $N20;
+//         cursor: not-allowed;
+//       }
+
+//       // placeholder 컬러 스타일
+//       &::-webkit-input-placeholder {
+//         color: $N70;
+//       }
+
+//       &:-ms-input-placeholder {
+//         color: $N70;
+//       }
+
+//       // 인풋 상태 스타일 (error)
+//       &.#{$prefix}-form-group__textarea--error {
+//         padding: 7px;
+//         border: 2px solid $R500;
+//         border-radius: 3px;
+//       }
+//     }
+//   }
+// }
+
 .#{$prefix}-form-group {
-  // input 영역 감싸는 부모 스타일
-  .#{$prefix}-form-group__textarea-box {
-    position: relative;
-    width: 250px;
-    min-width: 80px;
-    max-width: 680px;
+  // textarea 개선
+  textarea.#{$prefix}-form-group__control {
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+    border: 1px solid #dfe1e6;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.03px;
+    background-color: #fafbfc;
+    color: #172b4d;
+    outline: none;
+    resize: none;
+    vertical-align: top;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
-    // input 스타일
-    .#{$prefix}-form-group__textarea {
-      width: 100%;
-      height: 80px;
-      padding: 8px;
-      border: 1px solid $N40;
+    &:hover {
+      background-color: $N20;
+    }
+
+    &:focus {
+      padding: 7px;
+      border: 2px solid $B400;
       border-radius: 3px;
-      font-size: 14px;
-      line-height: 20px;
-      letter-spacing: -0.03px;
-      background-color: $N10;
-      color: $N800;
-      outline: none;
-      resize: none;
-      vertical-align: top;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+      background-color: $N0;
+    }
 
-      &:hover {
-        background-color: $N20;
-      }
+    &[disabled],
+    fieldset[disabled] & {
+      border-color: $N20;
+      background-color: $N20;
+      cursor: not-allowed;
+    }
 
-      &:focus {
-        padding: 7px;
-        border: 2px solid $B400;
-        border-radius: 3px;
-        background-color: $N0;
-      }
+    // placeholder 컬러 스타일
+    &::-webkit-input-placeholder {
+      color: $N70;
+    }
 
-      &[disabled],
-      fieldset[disabled] & {
-        border-color: $N20;
-        background-color: $N20;
-        cursor: not-allowed;
-      }
+    &:-ms-input-placeholder {
+      color: $N70;
+    }
 
-      // placeholder 컬러 스타일
-      &::-webkit-input-placeholder {
-        color: $N70;
-      }
-
-      &:-ms-input-placeholder {
-        color: $N70;
-      }
-
-      // 인풋 상태 스타일 (error)
-      &.#{$prefix}-form-group__textarea--error {
-        padding: 7px;
-        border: 2px solid $R500;
-        border-radius: 3px;
-      }
+    // 인풋 상태 스타일 (error)
+    &.#{$prefix}-form-group__control--error {
+      padding: 7px;
+      border: 2px solid $R500;
+      border-radius: 3px;
     }
   }
 }

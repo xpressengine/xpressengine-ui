@@ -1,121 +1,246 @@
+// .#{$prefix}-form-group {
+//   + .#{$prefix}-form-group {
+//     margin-top: 20px;
+//   }
+
+//   input::-ms-clear {
+//     display: none;
+//   }
+
+//   input::-ms-reveal {
+//     display: none;
+//   }
+
+//   /* input type number 에서 화살표 제거 */
+//   input[type=number]::-webkit-inner-spin-button,
+//   input[type=number]::-webkit-outer-spin-button {
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+//   }
+
+//   // --- form 사이즈 small, large ---
+//   &.#{$prefix}-form-group--small {
+//     .#{$prefix}-form-group__input-box {
+//       // input
+//       .#{$prefix}-form-group__input {
+//         height: 28px;
+//       }
+//     }
+//   }
+
+//   &.#{$prefix}-form-group--large {
+//     .#{$prefix}-form-group__input-box {
+//       // input
+//       .#{$prefix}-form-group__input {
+//         height: 48px;
+//         font-size: 16px;
+//       }
+//     }
+//   }
+//   // --- //form 사이즈 small, large ---
+
+//   // input 영역 감싸는 부모 스타일
+//   .#{$prefix}-form-group__input-box {
+//     position: relative;
+//     width: 250px;
+//     min-width: 80px;
+//     max-width: 680px;
+
+//     + .#{$prefix}-form-group__input-box {
+//       margin-top: 24px;
+//     }
+
+//     // input 스타일
+//     .#{$prefix}-form-group__input {
+//       width: 100%;
+//       height: 36px;
+//       padding: 0 12px 0 12px;
+//       border: 1px solid $N40;
+//       border-radius: 3px;
+//       font-size: 14px;
+//       line-height: 28px;
+//       letter-spacing: -0.03px;
+//       background-color: $N10;
+//       color: $N800;
+//       outline: none;
+//       -webkit-appearance: none;
+//       -moz-appearance: none;
+//       appearance: none;
+
+//       &:hover {
+//         background-color: $N20;
+//       }
+
+//       &:focus {
+//         padding: 0 11px 0 11px;
+//         border: 2px solid $B400;
+//         border-radius: 4px;
+//         background-color: $N0;
+
+//         + .#{$prefix}-form-group__icon--focus {
+//           display: block;
+//         }
+//       }
+
+//       &[disabled],
+//       fieldset[disabled] & {
+//         border-color: $N20;
+//         background-color: $N20;
+//         color: $N70;
+//         cursor: not-allowed;
+//       }
+
+//       // placeholder 컬러 스타일
+//       &::-webkit-input-placeholder {
+//         color: $N70;
+//       }
+
+//       &:-ms-input-placeholder {
+//         color: $N70;
+//       }
+
+//       + .#{$prefix}-form-group__icon--focus {
+//         display: none;
+//       }
+
+//       // 인풋 상태 스타일 (error)
+//       &.#{$prefix}-form-group__input--error {
+//         padding: 0 11px 0 11px;
+//         border: 2px solid $R500;
+//         border-radius: 3px;
+//       }
+//     }
+
+//     // input 아이콘
+//     // 우측 아이콘 위치
+//     &.#{$prefix}-form-group__input-box--icon-right {
+//       .#{$prefix}-form-group__input {
+//         padding-right: 44px;
+
+//         &:focus {
+//           padding-right: 43px;
+//         }
+//       }
+
+//       // input 아이콘
+//       .#{$prefix}-form-group__icon {
+//         right: 12px;
+//       }
+//     }
+
+//     // 좌측 아이콘 위치
+//     &.#{$prefix}-form-group__input-box--icon-left {
+//       .#{$prefix}-form-group__input {
+//         padding-left: 44px;
+
+//         &:focus {
+//           padding-left: 43px;
+//         }
+//       }
+
+//       // input 아이콘
+//       .#{$prefix}-form-group__icon {
+//         left: 12px;
+//       }
+//     }
+
+//     // input 좌, 우측 아이콘 공통
+//     .#{$prefix}-form-group__icon {
+//       position: absolute;
+//       top: 50%;
+//       width: 20px;
+//       height: 20px;
+//       margin-top: -10px;
+//       padding: 0;
+//       border: 0 none;
+//       background-color: transparent;
+
+//       i {
+//         font-size: 20px;
+//         vertical-align: top;
+//         color: $N500;
+//       }
+//     }
+
+//     button.#{$prefix}-form-group__icon {
+//       outline: none;
+//       cursor: pointer;
+//     }
+//   }
+
+//   // 라벨 (세로형)
+//   .#{$prefix}-form-group__label {
+//     display: inline-block;
+//     padding-bottom: 3px;
+//     font-size: 12px;
+//     line-height: 15px;
+//     color: $N200;
+
+//     .#{$prefix}-form-group__label-required {
+//       display: inline-block;
+//       padding-left: 3px;
+//       font-size: 12px;
+//       font-style: normal;
+//       color: $R500;
+//     }
+//   }
+
+//   .#{$prefix}-form-group__validation {
+//     margin: 2px 0;
+//     padding: 0;
+//     font-size: 12px;
+//     line-height: 16px;
+
+//     &:first-of-type {
+//       padding-top: 6px;
+//     }
+
+//     &.#{$prefix}-text {
+//       color: $N90 !important;
+//     }
+
+//     &.#{$prefix}-form-group__validation--success {
+//       color: $G500;
+//     }
+
+//     &.#{$prefix}-form-group__validation--error {
+//       color: $R500;
+//     }
+//   }
+// }
+
+// 폼 개선
 .#{$prefix}-form-group {
   + .#{$prefix}-form-group {
     margin-top: 20px;
   }
 
-  input::-ms-clear {
-    display: none;
-  }
-
-  input::-ms-reveal {
-    display: none;
-  }
-
-  /* input type number 에서 화살표 제거 */
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-
   // --- form 사이즈 small, large ---
   &.#{$prefix}-form-group--small {
-    .#{$prefix}-form-group__input-box {
-      // input
-      .#{$prefix}-form-group__input {
-        height: 28px;
-      }
+    .#{$prefix}-form-group__control {
+      height: 28px;
     }
   }
 
   &.#{$prefix}-form-group--large {
-    .#{$prefix}-form-group__input-box {
-      // input
-      .#{$prefix}-form-group__input {
-        height: 48px;
-        font-size: 16px;
-      }
+    .#{$prefix}-form-group__control {
+      height: 48px;
+      font-size: 16px;
     }
   }
   // --- //form 사이즈 small, large ---
 
-  // input 영역 감싸는 부모 스타일
-  .#{$prefix}-form-group__input-box {
+  .#{$prefix}-form-group__box {
     position: relative;
-    width: 250px;
-    min-width: 80px;
-    max-width: 680px;
-
-    + .#{$prefix}-form-group__input-box {
-      margin-top: 24px;
-    }
-
-    // input 스타일
-    .#{$prefix}-form-group__input {
-      width: 100%;
-      height: 36px;
-      padding: 0 12px 0 12px;
-      border: 1px solid $N40;
-      border-radius: 3px;
-      font-size: 14px;
-      line-height: 28px;
-      letter-spacing: -0.03px;
-      background-color: $N10;
-      color: $N800;
-      outline: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-
-      &:hover {
-        background-color: $N20;
-      }
-
-      &:focus {
-        padding: 0 11px 0 11px;
-        border: 2px solid $B400;
-        border-radius: 4px;
-        background-color: $N0;
-
-        + .#{$prefix}-form-group__icon--focus {
-          display: block;
-        }
-      }
-
-      &[disabled],
-      fieldset[disabled] & {
-        border-color: $N20;
-        background-color: $N20;
-        color: $N70;
-        cursor: not-allowed;
-      }
-
-      // placeholder 컬러 스타일
-      &::-webkit-input-placeholder {
-        color: $N70;
-      }
-
-      &:-ms-input-placeholder {
-        color: $N70;
-      }
-
-      + .#{$prefix}-form-group__icon--focus {
-        display: none;
-      }
-
-      // 인풋 상태 스타일 (error)
-      &.#{$prefix}-form-group__input--error {
-        padding: 0 11px 0 11px;
-        border: 2px solid $R500;
-        border-radius: 3px;
-      }
-    }
+    // width: 250px;
+    // min-width: 80px;
+    // max-width: 680px;
 
     // input 아이콘
     // 우측 아이콘 위치
-    &.#{$prefix}-form-group__input-box--icon-right {
-      .#{$prefix}-form-group__input {
+    &.#{$prefix}-form-group__box--icon-right {
+      .#{$prefix}-form-group__control {
         padding-right: 44px;
 
         &:focus {
@@ -130,8 +255,8 @@
     }
 
     // 좌측 아이콘 위치
-    &.#{$prefix}-form-group__input-box--icon-left {
-      .#{$prefix}-form-group__input {
+    &.#{$prefix}-form-group__box--icon-left {
+      .#{$prefix}-form-group__control {
         padding-left: 44px;
 
         &:focus {
@@ -166,6 +291,67 @@
     button.#{$prefix}-form-group__icon {
       outline: none;
       cursor: pointer;
+    }
+  }
+
+  input.#{$prefix}-form-group__control {
+    display: block;
+    width: 100%;
+    height: 36px;
+    padding: 0 12px 0 12px;
+    border: 1px solid #dfe1e6;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: -0.03px;
+    background-color: #fafbfc;
+    color: #172b4d;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:hover {
+      background-color: $N20;
+    }
+
+    &:focus {
+      padding: 0 11px 0 11px;
+      border: 2px solid $B400;
+      border-radius: 4px;
+      background-color: $N0;
+
+      + .#{$prefix}-form-group__icon--focus {
+        display: block;
+      }
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+      border-color: $N20;
+      background-color: $N20;
+      color: $N70;
+      cursor: not-allowed;
+    }
+
+    // placeholder 컬러 스타일
+    &::-webkit-input-placeholder {
+      color: $N70;
+    }
+
+    &:-ms-input-placeholder {
+      color: $N70;
+    }
+
+    + .#{$prefix}-form-group__icon--focus {
+      display: none;
+    }
+
+    // 인풋 상태 스타일 (error)
+    &.#{$prefix}-form-group__control--error {
+      padding: 0 11px 0 11px;
+      border: 2px solid $R500;
+      border-radius: 3px;
     }
   }
 
@@ -207,5 +393,24 @@
     &.#{$prefix}-form-group__validation--error {
       color: $R500;
     }
+  }
+}
+
+// display: inline-block 적용
+.#{$prefix}-form--inline {
+  .#{$prefix}-form-group {
+    display: inline-block;
+    vertical-align: top;
+
+    + .#{$prefix}-form-group {
+      margin-top: 0;
+    }
+  }
+
+  input.#{$prefix}-form-group__control,
+  textarea.#{$prefix}-form-group__control ,
+  select.#{$prefix}-form-group__control {
+    display: inline-block;
+    width: auto;
   }
 }

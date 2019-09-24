@@ -1,53 +1,194 @@
+// .#{$prefix}-form-group {
+//   // --- size (small, large) ---
+//   &.#{$prefix}-form-group--small {
+//     .#{$prefix}-form-group__select-box {
+//       height: 28px;
+
+//       select {
+//         height: 28px;
+//         line-height: 27px;
+//       }
+//     }
+//   }
+
+//   &.#{$prefix}-form-group--large {
+//     .#{$prefix}-form-group__select-box {
+//       height: 48px;
+
+//       select {
+//         height: 48px;
+//         line-height: 47px;
+//       }
+//     }
+//   }
+//   // --- //size (small, large) ---
+
+//   // input 영역 감싸는 부모 스타일
+//   .#{$prefix}-form-group__select-box {
+//     position: relative;
+//     width: 250px;
+//     min-width: 80px;
+//     max-width: 680px;
+//     height: 36px;
+//     padding: 7px 12px;
+//     border: 1px solid $N40;
+//     border-radius: 3px;
+//     font-size: 14px;
+//     line-height: 28px;
+//     letter-spacing: -0.03px;
+//     background-color: $N10;
+//     color: $N800;
+//     outline: none;
+
+//     &:hover {
+//       background-color: $N20;
+//     }
+
+//     &:focus {
+//       padding: 7px;
+//       border: 2px solid $B400;
+//       border-radius: 3px;
+//       background-color: $N0;
+//     }
+
+//     &[disabled],
+//     fieldset[disabled] & {
+//       border-color: $N20;
+//       background-color: $N20;
+//       cursor: not-allowed;
+//     }
+
+//     // placeholder 컬러 스타일
+//     &::-webkit-input-placeholder {
+//       color: $N70;
+//     }
+
+//     &:-ms-input-placeholder {
+//       color: $N70;
+//     }
+
+//     .#{$prefix}-form-group__select-box-text {
+//       overflow: hidden;
+//       display: block;
+//       font-size: 14px;
+//       line-height: 20px;
+//       text-overflow: ellipsis;
+//       white-space: nowrap;
+//       vertical-align: top;
+//     }
+
+//     select {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 34px;
+//       padding: 0 44px 0 12px;
+//       font-size: 14px;
+//       line-height: 33px;
+//       border: 0 none;
+//       background-color: transparent;
+//       -webkit-appearance: none;
+//       color: $N800;
+
+//       &::-ms-expand {
+//         display: none;
+//       }
+//     }
+
+//     .#{$prefix}-form-group__icon {
+//       position: absolute;
+//       top: 50%;
+//       width: 20px;
+//       height: 20px;
+//       margin-top: -10px;
+//       padding: 0;
+//       border: 0 none;
+//       background-color: transparent;
+
+//       i {
+//         font-size: 20px;
+//         vertical-align: top;
+//         color: $N500;
+//       }
+//     }
+
+//     &.#{$prefix}-form-group__select-box--icon-left {
+//       padding-left: 44px;
+
+//       // select 아이콘
+//       .#{$prefix}-form-group__icon {
+//         left: 12px;
+//       }
+//     }
+
+//     // 우측 아이콘 위치
+//     &.#{$prefix}-form-group__select-box--icon-right {
+//       padding-right: 44px;
+
+//       // select 아이콘
+//       .#{$prefix}-form-group__icon {
+//         right: 12px;
+//       }
+//     }
+//   }
+// }
+
 .#{$prefix}-form-group {
+  // select 개선
   // --- size (small, large) ---
   &.#{$prefix}-form-group--small {
-    .#{$prefix}-form-group__select-box {
+    select.#{$prefix}-form-group__control {
       height: 28px;
+      line-height: 27px;
 
-      select {
-        height: 28px;
-        line-height: 27px;
+      &:focus {
+        line-height: 25px;
       }
     }
   }
 
   &.#{$prefix}-form-group--large {
-    .#{$prefix}-form-group__select-box {
+    select.#{$prefix}-form-group__control {
       height: 48px;
+      line-height: 47px;
 
-      select {
-        height: 48px;
-        line-height: 47px;
+      &:focus {
+        line-height: 45px;
       }
     }
   }
   // --- //size (small, large) ---
 
-  // input 영역 감싸는 부모 스타일
-  .#{$prefix}-form-group__select-box {
-    position: relative;
-    width: 250px;
-    min-width: 80px;
-    max-width: 680px;
+  select.#{$prefix}-form-group__control {
+    width: 100%;
     height: 36px;
-    padding: 7px 12px;
-    border: 1px solid $N40;
+    padding: 0 12px 0 12px;
+    border: 1px solid #dfe1e6;
     border-radius: 3px;
     font-size: 14px;
     line-height: 28px;
     letter-spacing: -0.03px;
-    background-color: $N10;
-    color: $N800;
+    background-color: #fafbfc;
+    color: #172b4d;
     outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
 
     &:hover {
       background-color: $N20;
     }
 
     &:focus {
-      padding: 7px;
+      padding: 0 11px;
       border: 2px solid $B400;
       border-radius: 3px;
+      line-height: 26px;
       background-color: $N0;
     }
 
@@ -65,71 +206,6 @@
 
     &:-ms-input-placeholder {
       color: $N70;
-    }
-
-    .#{$prefix}-form-group__select-box-text {
-      overflow: hidden;
-      display: block;
-      font-size: 14px;
-      line-height: 20px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      vertical-align: top;
-    }
-
-    select {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 34px;
-      padding: 0 44px 0 12px;
-      font-size: 14px;
-      line-height: 33px;
-      border: 0 none;
-      background-color: transparent;
-      -webkit-appearance: none;
-      color: $N800;
-
-      &::-ms-expand {
-        display: none;
-      }
-    }
-
-    .#{$prefix}-form-group__icon {
-      position: absolute;
-      top: 50%;
-      width: 20px;
-      height: 20px;
-      margin-top: -10px;
-      padding: 0;
-      border: 0 none;
-      background-color: transparent;
-
-      i {
-        font-size: 20px;
-        vertical-align: top;
-        color: $N500;
-      }
-    }
-
-    &.#{$prefix}-form-group__select-box--icon-left {
-      padding-left: 44px;
-
-      // select 아이콘
-      .#{$prefix}-form-group__icon {
-        left: 12px;
-      }
-    }
-
-    // 우측 아이콘 위치
-    &.#{$prefix}-form-group__select-box--icon-right {
-      padding-right: 44px;
-
-      // select 아이콘
-      .#{$prefix}-form-group__icon {
-        right: 12px;
-      }
     }
   }
 }

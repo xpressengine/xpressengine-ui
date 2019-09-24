@@ -99,58 +99,59 @@
         <!-- 페이지 제목 : class="title", 여기서 xd 는 xe documentation 약자 -->
         <h2 class="title">Forms</h2>
         <!-- 페이지 설명 : class="lead" -->
-        <p class="lead">XE3 새로운 스타일 Forms 의 Input, Textarea, 시스템 selectbox 입니다.</p>
+        <p class="lead">
+            XE3 새로운 스타일 Forms 의 Input, Textarea, 시스템 selectbox 입니다.<br>
+            class="xu-form-group__input-box" -> class="xu-form-group__box" 으로 변경<br>
+            class="xu-form-group__input" -> class="xu-form-group__control" 으로 form 태그를 __control 로 변경
+        </p>
         <!-- === 항목 한 블럭 === -->
         <h3><span class="content-title">Input Single</span></h3>
         <p>Input 기본형태 입니다. (아이콘 좌우 적용 및 아이콘 클릭(버튼), 클릭안됨(span) 적용)</p>
         <div class="example">
             <form>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="componentSingle1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다.">
-                    </div>
+                    <input type="text" name="componentSingle1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다.">
                 </div>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="componentSingle2" class="xu-form-group__input" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다.">
-                    </div>
+                    <input type="text" name="componentSingle2" class="xu-form-group__control" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다.">
                 </div>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
-                        <input type="text" name="componentSingle3" class="xu-form-group__input" placeholder="오른쪽 아이콘(버튼)과 함께">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <input type="text" name="componentSingle3" class="xu-form-group__control" placeholder="오른쪽 아이콘(버튼)과 함께">
                         <button type="button" class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </button>
                     </div>
                 </div>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-left">
-                        <input type="text" name="componentSingle4" class="xu-form-group__input" placeholder="왼쪽 아이콘(버튼)과 함께">
+                    <div class="xu-form-group__box xu-form-group__box--icon-left">
+                        <input type="text" name="componentSingle4" class="xu-form-group__control" placeholder="왼쪽 아이콘(버튼)과 함께">
                         <button type="button" class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </button>
                     </div>
                 </div>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
-                        <input type="password" name="componentSingle6" class="xu-form-group__input" placeholder="비밀번호 노출, 미노출 아이콘">
-                        <button type="button" class="xu-form-group__icon">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <input type="password" name="componentSingle6" class="xu-form-group__control" placeholder="비밀번호 노출, 미노출 아이콘">
+                        <!-- [D] 비밀번호 보이고 안보이는 스크립트 적용 시 data-password="xu-password" 추가 -->
+                        <button type="button" class="xu-form-group__icon" data-password="xu-password">
                             <i class="xi-eye"></i>
                             <!-- <i class="xi-eye-off"></i> -->
                         </button>
                     </div>
                 </div>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
-                        <input type="text" name="componentSingle5" class="xu-form-group__input" placeholder="오른쪽 아이콘(span)과 함께">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <input type="text" name="componentSingle5" class="xu-form-group__control" placeholder="오른쪽 아이콘(span)과 함께">
                         <span class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </span>
                     </div>
                 </div>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-left">
-                        <input type="text" name="componentSingle6" class="xu-form-group__input" placeholder="왼쪽 아이콘(span)과 함께">
+                    <div class="xu-form-group__box xu-form-group__box--icon-left">
+                        <input type="text" name="componentSingle6" class="xu-form-group__control" placeholder="왼쪽 아이콘(span)과 함께">
                         <span class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </span>
@@ -158,67 +159,60 @@
                 </div>
 
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box">
-                        <input type="number" name="componentSingle7" class="xu-form-group__input" placeholder="type number">
-                    </div>
+                    <input type="number" name="componentSingle7" class="xu-form-group__control" placeholder="type number">
                 </div>
 
                 <fieldset disabled="disabled" style="margin-top: 24px;">
                     <div class="xu-form-group">
-                        <div class="xu-form-group__input-box">
-                            <input type="text" name="componentSingle7" class="xu-form-group__input" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다.">
-                        </div>
+                        <input type="text" name="componentSingle7" class="xu-form-group__control" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다.">
                     </div>
                 </fieldset>
             </form>
         </div>
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="componentSingle1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다."&gt;
-    &lt;/div&gt;
+    &lt;input type="text" name="componentSingle1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다."&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="componentSingle2" class="xu-form-group__input" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다."&gt;
-    &lt;/div&gt;
+    &lt;input type="text" name="componentSingle2" class="xu-form-group__control" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다."&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
-        &lt;input type="text" name="componentSingle3" class="xu-form-group__input" placeholder="오른쪽 아이콘(버튼)과 함께"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;input type="text" name="componentSingle3" class="xu-form-group__control" placeholder="오른쪽 아이콘(버튼)과 함께"&gt;
         &lt;button type="button" class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-left"&gt;
-        &lt;input type="text" name="componentSingle4" class="xu-form-group__input" placeholder="왼쪽 아이콘(버튼)과 함께"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-left"&gt;
+        &lt;input type="text" name="componentSingle4" class="xu-form-group__control" placeholder="왼쪽 아이콘(버튼)과 함께"&gt;
         &lt;button type="button" class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
-        &lt;input type="password" name="componentSingle6" class="xu-form-group__input" placeholder="비밀번호 노출, 미노출 아이콘"&gt;
-        &lt;button type="button" class="xu-form-group__icon"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;input type="password" name="componentSingle6" class="xu-form-group__control" placeholder="비밀번호 노출, 미노출 아이콘"&gt;
+        &lt;!-- [D] 비밀번호 보이고 안보이는 스크립트 적용 시 data-password="xu-password" 추가 --&gt;
+        &lt;button type="button" class="xu-form-group__icon" data-password="xu-password"&gt;
             &lt;i class="xi-eye"&gt;&lt;/i&gt;
             &lt;!-- &lt;i class="xi-eye-off"&gt;&lt;/i&gt; --&gt;
         &lt;/button&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
-        &lt;input type="text" name="componentSingle5" class="xu-form-group__input" placeholder="오른쪽 아이콘(span)과 함께"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;input type="text" name="componentSingle5" class="xu-form-group__control" placeholder="오른쪽 아이콘(span)과 함께"&gt;
         &lt;span class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/span&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-left"&gt;
-        &lt;input type="text" name="componentSingle6" class="xu-form-group__input" placeholder="왼쪽 아이콘(span)과 함께"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-left"&gt;
+        &lt;input type="text" name="componentSingle6" class="xu-form-group__control" placeholder="왼쪽 아이콘(span)과 함께"&gt;
         &lt;span class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/span&gt;
@@ -226,16 +220,12 @@
 &lt;/div&gt;
 
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="number" name="componentSingle7" class="xu-form-group__input" placeholder="type number"&gt;
-    &lt;/div&gt;
+    &lt;input type="number" name="componentSingle7" class="xu-form-group__control" placeholder="type number"&gt;
 &lt;/div&gt;
 
 &lt;fieldset disabled="disabled" style="margin-top: 24px;"&gt;
     &lt;div class="xu-form-group"&gt;
-        &lt;div class="xu-form-group__input-box"&gt;
-            &lt;input type="text" name="componentSingle7" class="xu-form-group__input" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다."&gt;
-        &lt;/div&gt;
+        &lt;input type="text" name="componentSingle7" class="xu-form-group__control" disabled="disabled" placeholder="placeholder 입니다." value="disabled 입니다."&gt;
     &lt;/div&gt;
 &lt;/fieldset&gt;</code></pre>
         </div>
@@ -247,32 +237,26 @@
         <div class="example">
             <form>
                 <div class="xu-form-group xu-form-group--small">
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="inputSize1" class="xu-form-group__input" placeholder="size small">
-                    </div>
+                    <input type="text" name="inputSize1" class="xu-form-group__control" placeholder="size small">
                 </div>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="inputSize2" class="xu-form-group__input" placeholder="size default">
-                    </div>
+                    <input type="text" name="inputSize2" class="xu-form-group__control" placeholder="size default">
                 </div>
                 <div class="xu-form-group xu-form-group--large">
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="inputSize3" class="xu-form-group__input" placeholder="size large">
-                    </div>
+                    <input type="text" name="inputSize3" class="xu-form-group__control" placeholder="size large">
                 </div>
 
                 <div class="xu-form-group xu-form-group--small">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
-                        <input type="text" name="inputSize4" class="xu-form-group__input" placeholder="size small icon right">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <input type="text" name="inputSize4" class="xu-form-group__control" placeholder="size small icon right">
                         <button type="button" class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </button>
                     </div>
                 </div>
                 <div class="xu-form-group xu-form-group--small">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-left">
-                        <input type="text" name="inputSize5" class="xu-form-group__input" placeholder="size small icon left">
+                    <div class="xu-form-group__box xu-form-group__box--icon-left">
+                        <input type="text" name="inputSize5" class="xu-form-group__control" placeholder="size small icon left">
                         <button type="button" class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </button>
@@ -280,16 +264,16 @@
                 </div>
 
                 <div class="xu-form-group xu-form-group--large">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-right">
-                        <input type="text" name="inputSize6" class="xu-form-group__input" placeholder="size large icon right">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <input type="text" name="inputSize6" class="xu-form-group__control" placeholder="size large icon right">
                         <button type="button" class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </button>
                     </div>
                 </div>
                 <div class="xu-form-group xu-form-group--large">
-                    <div class="xu-form-group__input-box xu-form-group__input-box--icon-left">
-                        <input type="text" name="inputSize7" class="xu-form-group__input" placeholder="size large icon left">
+                    <div class="xu-form-group__box xu-form-group__box--icon-left">
+                        <input type="text" name="inputSize7" class="xu-form-group__control" placeholder="size large icon left">
                         <button type="button" class="xu-form-group__icon">
                             <i class="xi-search"></i>
                         </button>
@@ -299,32 +283,32 @@
         </div>
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-form-group xu-form-group--small"&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="inputSize1" class="xu-form-group__input" placeholder="size small"&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;input type="text" name="inputSize1" class="xu-form-group__control" placeholder="size small"&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="inputSize2" class="xu-form-group__input" placeholder="size default"&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;input type="text" name="inputSize2" class="xu-form-group__control" placeholder="size default"&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group xu-form-group--large"&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="inputSize3" class="xu-form-group__input" placeholder="size large"&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;input type="text" name="inputSize3" class="xu-form-group__control" placeholder="size large"&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="xu-form-group xu-form-group--small"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
-        &lt;input type="text" name="inputSize4" class="xu-form-group__input" placeholder="size small icon right"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;input type="text" name="inputSize4" class="xu-form-group__control" placeholder="size small icon right"&gt;
         &lt;button type="button" class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group xu-form-group--small"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-left"&gt;
-        &lt;input type="text" name="inputSize5" class="xu-form-group__input" placeholder="size small icon left"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-left"&gt;
+        &lt;input type="text" name="inputSize5" class="xu-form-group__control" placeholder="size small icon left"&gt;
         &lt;button type="button" class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/button&gt;
@@ -332,16 +316,16 @@
 &lt;/div&gt;
 
 &lt;div class="xu-form-group xu-form-group--large"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-right"&gt;
-        &lt;input type="text" name="inputSize6" class="xu-form-group__input" placeholder="size large icon right"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;input type="text" name="inputSize6" class="xu-form-group__control" placeholder="size large icon right"&gt;
         &lt;button type="button" class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group xu-form-group--large"&gt;
-    &lt;div class="xu-form-group__input-box xu-form-group__input-box--icon-left"&gt;
-        &lt;input type="text" name="inputSize7" class="xu-form-group__input" placeholder="size large icon left"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-left"&gt;
+        &lt;input type="text" name="inputSize7" class="xu-form-group__control" placeholder="size large icon left"&gt;
         &lt;button type="button" class="xu-form-group__icon"&gt;
             &lt;i class="xi-search"&gt;&lt;/i&gt;
         &lt;/button&gt;
@@ -357,8 +341,8 @@
             <form>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="inputLabelVertical1">세로형</label>
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="componentVertical1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다.">
+                    <div class="xu-form-group__box">
+                        <input type="text" name="componentVertical1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다.">
                     </div>
                     <p class="xu-form-group__validation xu-text">6글자 이상 입력</p>
                     <p class="xu-form-group__validation xu-text--success">6글자 이상 입력</p>
@@ -366,22 +350,22 @@
                 </div>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="inputLabelVertical2">라벨명<em class="xu-form-group__label-required">*</em></label>
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="componentVertical2" class="xu-form-group__input" id="inputLabelVertical2" placeholder="placeholder 입니다.">
+                    <div class="xu-form-group__box">
+                        <input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다.">
                     </div>
                 </div>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="inputLabelVertical3">에러<em class="xu-form-group__label-required">*</em></label>
-                    <div class="xu-form-group__input-box">
-                        <!-- [D] 벨리데이션 에러 시 class="xu-form-group__input--error" 추가 -->
-                        <input type="text" name="componentVertical3" class="xu-form-group__input xu-form-group__input--error" id="inputLabelVertical3" placeholder="placeholder 입니다.">
+                    <div class="xu-form-group__box">
+                        <!-- [D] 벨리데이션 에러 시 class="xu-form-group__control--error" 추가 -->
+                        <input type="text" name="componentVertical3" class="xu-form-group__control xu-form-group__control--error" id="inputLabelVertical3" placeholder="placeholder 입니다.">
                     </div>
                     <p class="xu-form-group__validation xu-text--error">6글자 이상 입력</p>
                 </div>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="inputLabelVertical4">Success<em class="xu-form-group__label-required">*</em></label>
-                    <div class="xu-form-group__input-box">
-                        <input type="text" name="componentVertical4" class="xu-form-group__input" id="inputLabelVertical4" placeholder="placeholder 입니다.">
+                    <div class="xu-form-group__box">
+                        <input type="text" name="componentVertical4" class="xu-form-group__control" id="inputLabelVertical4" placeholder="placeholder 입니다.">
                     </div>
                     <p class="xu-form-group__validation xu-text--success">6글자 이상 입력</p>
                 </div>
@@ -390,34 +374,117 @@
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;세로형&lt;/label&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="componentVertical1" class="xu-form-group__input" id="inputLabelVertical1" placeholder="placeholder 입니다."&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;input type="text" name="componentVertical1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다."&gt;
     &lt;/div&gt;
-    &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+    &lt;p class="xu-form-group__validation xu-text"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--success"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--error"&gt;6글자 이상 입력&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="inputLabelVertical2"&gt;라벨명&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="componentVertical2" class="xu-form-group__input" id="inputLabelVertical2" placeholder="placeholder 입니다."&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다."&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="inputLabelVertical3"&gt;에러&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;!-- [D] 벨리데이션 에러 시 class="xu-form-group__input--error" 추가 --&gt;
-        &lt;input type="text" name="componentVertical3" class="xu-form-group__input xu-form-group__input--error" id="inputLabelVertical3" placeholder="placeholder 입니다."&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;!-- [D] 벨리데이션 에러 시 class="xu-form-group__control--error" 추가 --&gt;
+        &lt;input type="text" name="componentVertical3" class="xu-form-group__control xu-form-group__control--error" id="inputLabelVertical3" placeholder="placeholder 입니다."&gt;
     &lt;/div&gt;
     &lt;p class="xu-form-group__validation xu-text--error"&gt;6글자 이상 입력&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="inputLabelVertical4"&gt;Success&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-    &lt;div class="xu-form-group__input-box"&gt;
-        &lt;input type="text" name="componentVertical4" class="xu-form-group__input" id="inputLabelVertical4" placeholder="placeholder 입니다."&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;input type="text" name="componentVertical4" class="xu-form-group__control" id="inputLabelVertical4" placeholder="placeholder 입니다."&gt;
     &lt;/div&gt;
     &lt;p class="xu-form-group__validation xu-text--success"&gt;6글자 이상 입력&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+        </div>
+        <!-- === //항목 한 블럭 === -->
+
+        <!-- === 항목 한 블럭 === -->
+        <h3><span class="content-title">Input Form inline</span></h3>
+        <p>Input 영역에 display: inline-block 을 적용한다.</p>
+        <div class="example">
+            <form>
+                <div class="xu-form-group xu-form--inline">
+                    <label class="xu-form-group__label" for="inputLabelVertical1">세로형</label>
+                    <div class="xu-form-group__box">
+                        <input type="text" name="componentVertical1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다.">
+                    </div>
+                    <p class="xu-form-group__validation xu-text">6글자 이상 입력</p>
+                    <p class="xu-form-group__validation xu-text--success">6글자 이상 입력</p>
+                    <p class="xu-form-group__validation xu-text--error">6글자 이상 입력</p>
+                </div>
+                <div class="xu-form-group xu-form--inline">
+                    <label class="xu-form-group__label" for="inputLabelVertical2">라벨명<em class="xu-form-group__label-required">*</em></label>
+                    <div class="xu-form-group__box">
+                        <input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다.">
+                        <input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다.">
+                    </div>
+                </div>
+            </form>
+
+            <form class="xu-form--inline" style="margin-top: 20px;">
+                <div class="xu-form-group">
+                    <label class="xu-form-group__label" for="inputLabelVertical1">세로형</label>
+                    <div class="xu-form-group__box">
+                        <input type="text" name="componentVertical1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다.">
+                    </div>
+                    <p class="xu-form-group__validation xu-text">6글자 이상 입력</p>
+                    <p class="xu-form-group__validation xu-text--success">6글자 이상 입력</p>
+                    <p class="xu-form-group__validation xu-text--error">6글자 이상 입력</p>
+                </div>
+                <div class="xu-form-group">
+                    <label class="xu-form-group__label" for="inputLabelVertical2">라벨명<em class="xu-form-group__label-required">*</em></label>
+                    <div class="xu-form-group__box">
+                        <input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다.">
+                        <input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다.">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="code">
+            <pre><code class="language-html">&lt;form&gt;
+    &lt;div class="xu-form-group xu-form--inline"&gt;
+        &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;세로형&lt;/label&gt;
+        &lt;div class="xu-form-group__box"&gt;
+            &lt;input type="text" name="componentVertical1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다."&gt;
+        &lt;/div&gt;
+        &lt;p class="xu-form-group__validation xu-text"&gt;6글자 이상 입력&lt;/p&gt;
+        &lt;p class="xu-form-group__validation xu-text--success"&gt;6글자 이상 입력&lt;/p&gt;
+        &lt;p class="xu-form-group__validation xu-text--error"&gt;6글자 이상 입력&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="xu-form-group xu-form--inline"&gt;
+        &lt;label class="xu-form-group__label" for="inputLabelVertical2"&gt;라벨명&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
+        &lt;div class="xu-form-group__box"&gt;
+            &lt;input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다."&gt;
+            &lt;input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다."&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;form class="xu-form--inline" style="margin-top: 20px;"&gt;
+    &lt;div class="xu-form-group"&gt;
+        &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;세로형&lt;/label&gt;
+        &lt;div class="xu-form-group__box"&gt;
+            &lt;input type="text" name="componentVertical1" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다."&gt;
+        &lt;/div&gt;
+        &lt;p class="xu-form-group__validation xu-text"&gt;6글자 이상 입력&lt;/p&gt;
+        &lt;p class="xu-form-group__validation xu-text--success"&gt;6글자 이상 입력&lt;/p&gt;
+        &lt;p class="xu-form-group__validation xu-text--error"&gt;6글자 이상 입력&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="xu-form-group"&gt;
+        &lt;label class="xu-form-group__label" for="inputLabelVertical2"&gt;라벨명&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
+        &lt;div class="xu-form-group__box"&gt;
+            &lt;input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다."&gt;
+            &lt;input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다."&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
         </div>
         <!-- === //항목 한 블럭 === -->
 
@@ -427,16 +494,16 @@
         <div class="example">
             <form>
                 <div class="xu-form-group">
-                    <div class="xu-form-group__textarea-box">
-                        <textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
+                    <div class="xu-form-group__box">
+                        <textarea class="xu-form-group__control" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
                     </div>
                 </div>
             </form>
         </div>
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
-    &lt;div class="xu-form-group__textarea-box"&gt;
-        &lt;textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;textarea class="xu-form-group__control" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
         </div>
@@ -449,19 +516,19 @@
             <form>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="inputLabelVertical1">Vertical</label>
-                    <div class="xu-form-group__textarea-box">
-                        <textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
+                    <div class="xu-form-group__box">
+                        <textarea class="xu-form-group__control" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
                     </div>
-                    <p class="xu-form-group__validation">6글자 이상 입력</p>
+                    <p class="xu-form-group__validation xu-text">6글자 이상 입력</p>
                     <p class="xu-form-group__validation xu-text--success">6글자 이상 입력</p>
                     <p class="xu-form-group__validation xu-text--error">6글자 이상 입력</p>
                 </div>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="inputLabelVertical1">Vertical error</label>
-                    <div class="xu-form-group__textarea-box">
-                        <textarea class="xu-form-group__textarea xu-form-group__textarea--error" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
+                    <div class="xu-form-group__box">
+                        <textarea class="xu-form-group__control xu-form-group__control--error" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."></textarea>
                     </div>
-                    <p class="xu-form-group__validation">6글자 이상 입력</p>
+                    <p class="xu-form-group__validation xu-text">6글자 이상 입력</p>
                     <p class="xu-form-group__validation xu-text--success">6글자 이상 입력</p>
                     <p class="xu-form-group__validation xu-text--error">6글자 이상 입력</p>
                 </div>
@@ -470,19 +537,19 @@
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;Vertical&lt;/label&gt;
-    &lt;div class="xu-form-group__textarea-box"&gt;
-        &lt;textarea class="xu-form-group__textarea" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;textarea class="xu-form-group__control" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
     &lt;/div&gt;
-    &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+    &lt;p class="xu-form-group__validation xu-text"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--success"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--error"&gt;6글자 이상 입력&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="inputLabelVertical1"&gt;Vertical error&lt;/label&gt;
-    &lt;div class="xu-form-group__textarea-box"&gt;
-        &lt;textarea class="xu-form-group__textarea xu-form-group__textarea--error" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
+    &lt;div class="xu-form-group__box"&gt;
+        &lt;textarea class="xu-form-group__control xu-form-group__control--error" cols="33" rows="3" placeholder="툴팁을 사용합니다. Textarea는 글높이가 늘어나면 자동으로 높이가 늘어납니다."&gt;&lt;/textarea&gt;
     &lt;/div&gt;
-    &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+    &lt;p class="xu-form-group__validation xu-text"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--success"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--error"&gt;6글자 이상 입력&lt;/p&gt;
 &lt;/div&gt;</code></pre>
@@ -496,20 +563,20 @@
             <form>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="dropdownSystem1">selectbox 시스템<em class="xu-form-group__label-required">*</em></label>
-                    <div class="xu-form-group__select-box xu-form-group__select-box--icon-right">
-                        <!-- <span class="xu-form-group__select-box-text">선택하세요.</span> -->
-                        <select id="dropdownSystem1">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <!-- <span class="xu-form-group__box-text">선택하세요.</span> -->
+                        <select class="xu-form-group__control" id="dropdownSystem1">
                         <option disabled="disabled" selected="selected">선택하세요.</option>
-                        <option>xu-form-group__select-box 1 xu-form-group__select-box 1</option>
-                        <option>xu-form-group__select-box 2</option>
-                        <option>xu-form-group__select-box 3</option>
-                        <option>xu-form-group__select-box 4</option>
+                        <option>xu-form-group__box 1 xu-form-group__box 1</option>
+                        <option>xu-form-group__box 2</option>
+                        <option>xu-form-group__box 3</option>
+                        <option>xu-form-group__box 4</option>
                         </select>
                         <span class="xu-form-group__icon">
                             <i class="xi-angle-down-min"></i>
                         </span>
                     </div>
-                    <p class="xu-form-group__validation">6글자 이상 입력</p>
+                    <p class="xu-form-group__validation xu-text">6글자 이상 입력</p>
                     <p class="xu-form-group__validation xu-text--success">6글자 이상 입력</p>
                     <p class="xu-form-group__validation xu-text--error">6글자 이상 입력</p>
                 </div>
@@ -518,20 +585,20 @@
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="dropdownSystem1"&gt;selectbox 시스템&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-    &lt;div class="xu-form-group__select-box xu-form-group__select-box--icon-right"&gt;
-        &lt;!-- &lt;span class="xu-form-group__select-box-text"&gt;선택하세요.&lt;/span&gt; --&gt;
-        &lt;select id="dropdownSystem1"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;!-- &lt;span class="xu-form-group__box-text"&gt;선택하세요.&lt;/span&gt; --&gt;
+        &lt;select class="xu-form-group__control" id="dropdownSystem1"&gt;
         &lt;option disabled="disabled" selected="selected"&gt;선택하세요.&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 1 xu-form-group__select-box 1&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 2&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 3&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 4&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 1 xu-form-group__box 1&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 2&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 3&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 4&lt;/option&gt;
         &lt;/select&gt;
         &lt;span class="xu-form-group__icon"&gt;
             &lt;i class="xi-angle-down-min"&gt;&lt;/i&gt;
         &lt;/span&gt;
     &lt;/div&gt;
-    &lt;p class="xu-form-group__validation"&gt;6글자 이상 입력&lt;/p&gt;
+    &lt;p class="xu-form-group__validation xu-text"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--success"&gt;6글자 이상 입력&lt;/p&gt;
     &lt;p class="xu-form-group__validation xu-text--error"&gt;6글자 이상 입력&lt;/p&gt;
 &lt;/div&gt;</code></pre>
@@ -545,14 +612,14 @@
             <form>
                 <div class="xu-form-group">
                     <label class="xu-form-group__label" for="selectSize1">selectbox 시스템 (default)<em class="xu-form-group__label-required">*</em></label>
-                    <div class="xu-form-group__select-box xu-form-group__select-box--icon-right">
-                        <!-- <span class="xu-form-group__select-box-text">선택하세요.</span> -->
-                        <select id="selectSize1">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <!-- <span class="xu-form-group__box-text">선택하세요.</span> -->
+                        <select class="xu-form-group__control" id="selectSize1">
                         <option disabled="disabled" selected="selected">선택하세요.</option>
-                        <option>xu-form-group__select-box 1 xu-form-group__select-box 1</option>
-                        <option>xu-form-group__select-box 2</option>
-                        <option>xu-form-group__select-box 3</option>
-                        <option>xu-form-group__select-box 4</option>
+                        <option>xu-form-group__box 1 xu-form-group__box 1</option>
+                        <option>xu-form-group__box 2</option>
+                        <option>xu-form-group__box 3</option>
+                        <option>xu-form-group__box 4</option>
                         </select>
                         <span class="xu-form-group__icon">
                             <i class="xi-angle-down-min"></i>
@@ -562,13 +629,13 @@
 
                 <div class="xu-form-group xu-form-group--small">
                     <label class="xu-form-group__label" for="selectSize2">selectbox 시스템 (small)<em class="xu-form-group__label-required">*</em></label>
-                    <div class="xu-form-group__select-box xu-form-group__select-box--icon-right">
-                        <select id="selectSize2">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <select class="xu-form-group__control" id="selectSize2">
                         <option disabled="disabled" selected="selected">선택하세요.</option>
-                        <option>xu-form-group__select-box 1 xu-form-group__select-box 1</option>
-                        <option>xu-form-group__select-box 2</option>
-                        <option>xu-form-group__select-box 3</option>
-                        <option>xu-form-group__select-box 4</option>
+                        <option>xu-form-group__box 1 xu-form-group__box 1</option>
+                        <option>xu-form-group__box 2</option>
+                        <option>xu-form-group__box 3</option>
+                        <option>xu-form-group__box 4</option>
                         </select>
                         <span class="xu-form-group__icon">
                             <i class="xi-angle-down-min"></i>
@@ -577,13 +644,13 @@
                 </div>
                 <div class="xu-form-group xu-form-group--large">
                     <label class="xu-form-group__label" for="selectSize3">selectbox 시스템 (large)<em class="xu-form-group__label-required">*</em></label>
-                    <div class="xu-form-group__select-box xu-form-group__select-box--icon-right">
-                        <select id="selectSize3">
+                    <div class="xu-form-group__box xu-form-group__box--icon-right">
+                        <select class="xu-form-group__control" id="selectSize3">
                         <option disabled="disabled" selected="selected">선택하세요.</option>
-                        <option>xu-form-group__select-box 1 xu-form-group__select-box 1</option>
-                        <option>xu-form-group__select-box 2</option>
-                        <option>xu-form-group__select-box 3</option>
-                        <option>xu-form-group__select-box 4</option>
+                        <option>xu-form-group__box 1 xu-form-group__box 1</option>
+                        <option>xu-form-group__box 2</option>
+                        <option>xu-form-group__box 3</option>
+                        <option>xu-form-group__box 4</option>
                         </select>
                         <span class="xu-form-group__icon">
                             <i class="xi-angle-down-min"></i>
@@ -595,14 +662,14 @@
         <div class="code">
             <pre><code class="language-html">&lt;div class="xu-form-group"&gt;
     &lt;label class="xu-form-group__label" for="selectSize1"&gt;selectbox 시스템 (default)&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-    &lt;div class="xu-form-group__select-box xu-form-group__select-box--icon-right"&gt;
-        &lt;!-- &lt;span class="xu-form-group__select-box-text"&gt;선택하세요.&lt;/span&gt; --&gt;
-        &lt;select id="selectSize1"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;!-- &lt;span class="xu-form-group__box-text"&gt;선택하세요.&lt;/span&gt; --&gt;
+        &lt;select class="xu-form-group__control" id="selectSize1"&gt;
         &lt;option disabled="disabled" selected="selected"&gt;선택하세요.&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 1 xu-form-group__select-box 1&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 2&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 3&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 4&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 1 xu-form-group__box 1&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 2&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 3&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 4&lt;/option&gt;
         &lt;/select&gt;
         &lt;span class="xu-form-group__icon"&gt;
             &lt;i class="xi-angle-down-min"&gt;&lt;/i&gt;
@@ -612,13 +679,13 @@
 
 &lt;div class="xu-form-group xu-form-group--small"&gt;
     &lt;label class="xu-form-group__label" for="selectSize2"&gt;selectbox 시스템 (small)&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-    &lt;div class="xu-form-group__select-box xu-form-group__select-box--icon-right"&gt;
-        &lt;select id="selectSize2"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;select class="xu-form-group__control" id="selectSize2"&gt;
         &lt;option disabled="disabled" selected="selected"&gt;선택하세요.&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 1 xu-form-group__select-box 1&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 2&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 3&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 4&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 1 xu-form-group__box 1&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 2&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 3&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 4&lt;/option&gt;
         &lt;/select&gt;
         &lt;span class="xu-form-group__icon"&gt;
             &lt;i class="xi-angle-down-min"&gt;&lt;/i&gt;
@@ -627,13 +694,13 @@
 &lt;/div&gt;
 &lt;div class="xu-form-group xu-form-group--large"&gt;
     &lt;label class="xu-form-group__label" for="selectSize3"&gt;selectbox 시스템 (large)&lt;em class="xu-form-group__label-required"&gt;*&lt;/em&gt;&lt;/label&gt;
-    &lt;div class="xu-form-group__select-box xu-form-group__select-box--icon-right"&gt;
-        &lt;select id="selectSize3"&gt;
+    &lt;div class="xu-form-group__box xu-form-group__box--icon-right"&gt;
+        &lt;select class="xu-form-group__control" id="selectSize3"&gt;
         &lt;option disabled="disabled" selected="selected"&gt;선택하세요.&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 1 xu-form-group__select-box 1&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 2&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 3&lt;/option&gt;
-        &lt;option&gt;xu-form-group__select-box 4&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 1 xu-form-group__box 1&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 2&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 3&lt;/option&gt;
+        &lt;option&gt;xu-form-group__box 4&lt;/option&gt;
         &lt;/select&gt;
         &lt;span class="xu-form-group__icon"&gt;
             &lt;i class="xi-angle-down-min"&gt;&lt;/i&gt;
@@ -642,6 +709,7 @@
 &lt;/div&gt;</code></pre>
         </div>
         <!-- === //항목 한 블럭 === -->
+
     
               <!-- //페이지 컨텐츠 들어가는 곳 -->
             </div>

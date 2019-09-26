@@ -216,6 +216,22 @@
     margin-top: 20px;
   }
 
+  input::-ms-clear {
+    display: none;
+  }
+
+  input::-ms-reveal {
+    display: none;
+  }
+
+  /* input type number 에서 화살표 제거 */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
   // --- form 사이즈 small, large ---
   &.#{$prefix}-form-group--small {
     .#{$prefix}-form-group__control {
@@ -334,6 +350,13 @@
       cursor: not-allowed;
     }
 
+    &[readonly] {
+      border-color: $N20;
+      background-color: $N20;
+      color: $N70;
+      // cursor: not-allowed;
+    }
+
     // placeholder 컬러 스타일
     &::-webkit-input-placeholder {
       color: $N70;
@@ -408,7 +431,7 @@
   }
 
   input.#{$prefix}-form-group__control,
-  textarea.#{$prefix}-form-group__control ,
+  textarea.#{$prefix}-form-group__control,
   select.#{$prefix}-form-group__control {
     display: inline-block;
     width: auto;

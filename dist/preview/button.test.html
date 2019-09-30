@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <title>index - XE NEW Component</title>
+  <title>Button - XE NEW Component</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=no,viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -106,8 +106,47 @@
             <div id="content" class="content " style="background-color: transparent">
               <!-- 페이지 컨텐츠 들어가는 곳 -->
               
-    index
-  
+        <h2>버튼의 조합 테스트</h2>
+        <section>
+            <h3><code>.xu-button__text</code> 생략</h3>
+            <button type="button" class="xu-button xu-button--primary xu-button--large">
+                <span class="xu-button__text">있는거</span>
+            </button>
+            <button type="button" class="xu-button xu-button--primary">
+                <span class="xu-button__text">있는거</span>
+            </button>
+            <button type="button" class="xu-button xu-button--primary  xu-button--small">
+                <span class="xu-button__text">있는거</span>
+            </button>
+            <!-- 생략 -->
+            <button type="button" class="xu-button xu-button--primary xu-button--small">없는거</button>
+            <button type="button" class="xu-button xu-button--primary">없는거</button>
+            <button type="button" class="xu-button xu-button--primary xu-button--large">없는거</button>
+            <hr>
+            <button type="button" class="xu-button xu-button--primary xu-button--large">
+                    <span class="xu-button__text">있는거</span>
+                </button>
+                <button type="button" class="xu-button xu-button--primary">
+                    <span class="xu-button__text">있는거</span>
+                </button>
+                <button type="button" class="xu-button xu-button--primary  xu-button--small">
+                    <span class="xu-button__text">있는거</span>
+                </button>
+                <br>
+                <!-- 생략 -->
+                <button type="button" class="xu-button xu-button--primary xu-button--large">없는거</button>
+                <button type="button" class="xu-button xu-button--primary">없는거</button>
+                <button type="button" class="xu-button xu-button--primary xu-button--small">없는거</button>
+        </section>
+
+        <style>
+            section {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+    
               <!-- //페이지 컨텐츠 들어가는 곳 -->
             </div>
         </div>

@@ -24,71 +24,81 @@
         <!-- 사이드 메뉴 -->
         <!-- index.html 의 class="snb" 영역에 들어가는 페이지 -->
         <div class="xe-col-md-3 snb-wrap">
-                  <nav class="snb " style="background-color: transparent">
-          <ul class="snb-list">
-            <li>
-              <a href="/dist/preview/grid.html">Layout</a>
-              <ul>
-                <li><a href="/dist/preview/grid.html">Grid</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="/dist/preview/typography.html">Content</a>
-              <ul>
-                <li><a href="/dist/preview/typography.html">Typography</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="/dist/preview/button.html">Component</a>
-              <ul>
-                <li class=""><a href="/dist/preview/button.html">Buttons</a></li>
-                <li class=""><a href="/dist/preview/checkradio.html">CheckRadio</a></li>
-                <li class=""><a href="/dist/preview/forms.html">Forms</a></li>
-                <li class=""><a href="/dist/preview/dropdown.html">Dropdown</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <!-- //menu.html 영역 -->
-        <script>
-          $(function() {
-            // url query string 을 JSON 객체 형태로 리턴 (https://gent.tistory.com/62)
-            // function getUrlParams() {
-            //   var params = {};
-            //   window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
-            //     params[key] = value;
-            //   });
-            //   return params;
-            // }
+          <nav class="snb " style="background-color: transparent">
+    <ul class="snb-list">
+        <li>
+            <a href="./grid.html">Layout</a>
+            <ul>
+                <li><a href="./grid.html">Grid</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="./typography.html">Content</a>
+            <ul>
+                <li><a href="./typography.html">Typography</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="./button.html">Component</a>
+            <ul>
+                <li><a href="./button.html">Buttons</a></li>
+                <li><a href="./checkradio.html">CheckRadio</a></li>
+                <li><a href="./forms.html">Forms</a></li>
+                <li><a href="./dropdown.html">Dropdown</a></li>
+            </ul>
+        </li>
 
-            // 파일명 뽑기 (href 정보 기준, test.html => test)
-            function locationUrlFileName (pHref, pExtension) {
-              var arrHref = pHref.split('/');
-              var locationUrlName = arrHref[arrHref.length - 1].split('.' + pExtension)[0];
+        <li>
+            <a href="#test">Test</a>
+            <ul>
+                <li><a href="./button.test.html">Buttons</a></li>
+                <li><a href="./forms.test.html">Forms</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!-- //menu.html 영역 -->
 
-              return locationUrlName;
-            }
+<script>
+    $(function() {
+        // url query string 을 JSON 객체 형태로 리턴 (https://gent.tistory.com/62)
+        // function getUrlParams() {
+            //     var params = {};
+            //     window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+                //         params[key] = value;
+                //     });
+                //     return params;
+                // }
 
-            // 좌측 nav 메뉴 선택 표시 스크립트
-            var locationHref = window.location.href;
-            var locationUrlName = locationUrlFileName(locationHref,'html');
+                // 파일명 뽑기 (href 정보 기준, test.html => test)
+                function locationUrlFileName (pHref, pExtension) {
+                    var arrHref = pHref.split('/');
+                    var locationUrlName = arrHref[arrHref.length - 1].split('.' + pExtension)[0];
 
-            var arrLinkList = $('.snb-list a');
-            var linkNumber = -1;
-            arrLinkList.each(function(index, item) {
-              var itemHref = $(item).attr('href');
-              var itemUrlName = locationUrlFileName(itemHref,'html');
+                    return locationUrlName;
+                }
 
-              if(locationUrlName == itemUrlName) {
-                linkNumber = index;
-              }
+                // 좌측 nav 메뉴 선택 표시 스크립트
+                var locationHref = window.location.href;
+                var locationUrlName = locationUrlFileName(locationHref,'html');
+
+                var arrLinkList = $('.snb-list a');
+                var linkNumber = -1;
+                arrLinkList.each(function(index, item) {
+                    var itemHref = $(item).attr('href');
+                    var itemUrlName = locationUrlFileName(itemHref,'html');
+
+                    if(locationUrlName == itemUrlName) {
+                        linkNumber = index;
+                    }
+                });
+
+                if(linkNumber > -1) {
+                    $('.snb-list a').eq(linkNumber).parent().addClass('on');
+                }
             });
-
-            if(linkNumber > -1) {
-              $('.snb-list a').eq(linkNumber).parent().addClass('on');
-            }
-          });
         </script>
+
         </div>
         <!-- //사이드 메뉴 -->
         <!-- 컨텐츠 -->

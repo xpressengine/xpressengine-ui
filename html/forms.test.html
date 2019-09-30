@@ -1,0 +1,161 @@
+<extends src="layout/_main-content.html">
+    <block name="head.title">forms - XE NEW Component</block>
+    <block name="body.main">
+        <h2>폼 요소의 조합 테스트</h2>
+        <section>
+            <h3>form--inline: input + input</h3>
+            <div class="xu-form-group xu-form--inline">
+                <label class="xu-form-group__label" for="inputLabelVertical2">라벨명<em class="xu-form-group__label-required">*</em></label>
+                <div class="xu-form-group__box">
+                    <input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다.">
+                    <input type="text" name="componentVertical2" class="xu-form-group__control" id="inputLabelVertical2" placeholder="placeholder 입니다.">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>form--inline: input + 버튼</h3>
+            <div class="xu-form-group xu-form--inline">
+                <div class="xu-form-group__box">
+                    <input type="text" class="xu-form-group__control" placeholder="size default">
+                    <button type="button" class="xu-button xu-button--primary">default
+                        <input type="text" class="xu-form-group__control" placeholder="size default">
+                    </div>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form--inline">
+                <div class="xu-form-group__box">
+                    <button type="button" class="xu-button xu-button--primary">default</button>
+                    <input type="text" class="xu-form-group__control" placeholder="size default">
+                    <button type="button" class="xu-button xu-button--primary">default</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>form--inline: input + 버튼</h3>
+            <div class="xu-form-group xu-form--inline">
+                <div class="xu-form-group__box">
+                    <input type="text" class="xu-form-group__control" placeholder="size default">
+                    <button type="button" class="xu-button xu-button--primary">default
+                        <input type="text" class="xu-form-group__control" placeholder="size default">
+                    </div>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form--inline">
+                <div class="xu-form-group__box">
+                    <button type="button" class="xu-button xu-button--primary">default</button>
+                    <input type="text" class="xu-form-group__control" placeholder="size default">
+                    <button type="button" class="xu-button xu-button--primary">default</button>
+                </div>
+            </div>
+
+            <div class="xu-form-group xu-form--inline">
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(버튼)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i></button>
+                    <button type="button" class="xu-button xu-button--primary">default</button>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form--inline">
+                <button type="button" class="xu-button xu-button--primary">default</button>
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(버튼)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i></button>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form--inline">
+                <button type="button" class="xu-button xu-button--primary">default</button>
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <button type="button" class="xu-button xu-button--primary">default</button>
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(버튼)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i></button>
+                    <button type="button" class="xu-button xu-button--primary">default</button>
+                </div>
+                <button type="button" class="xu-button xu-button--primary">default</button>
+            </div>
+        </section>
+
+        <section>
+            <h3>padding을 제외한 input 영역(빨강)과 icon 클릭 영역(파랑) 강조</h3>
+            <div class="xu-form-group">
+                <input type="text" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다.">
+            </div>
+            <div class="xu-form-group">
+                <input type="text" class="xu-form-group__control" disabled placeholder="placeholder 입니다." value="disabled 입니다.">
+            </div>
+            <div class="xu-form-group">
+                <input type="text" readonly class="xu-form-group__control" readonly placeholder="placeholder 입니다." value="readonly 입니다.">
+            </div>
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-right">
+                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(버튼)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i></button>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form-group--large">
+                <div class="xu-form-group__box xu-form-group__box--icon-right">
+                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(버튼)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i></button>
+                </div>
+            </div>
+
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(버튼)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i></button>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form-group--large">
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(버튼)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i></button>
+                </div>
+            </div>
+
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-right">
+                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(span)과 함께">
+                    <span class="xu-form-group__icon"><i class="xi-search"></i></span>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form-group--large">
+                <div class="xu-form-group__box xu-form-group__box--icon-right">
+                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(span)과 함께">
+                    <span class="xu-form-group__icon"><i class="xi-search"></i></span>
+                </div>
+            </div>
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(span)과 함께">
+                    <span class="xu-form-group__icon"><i class="xi-search"></i></span>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form-group--large">
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(span)과 함께">
+                    <span class="xu-form-group__icon"><i class="xi-search"></i></span>
+                </div>
+            </div>
+        </section>
+
+
+
+        <style>
+            /* padding 제외한 input 영역 강조 */
+            .xu-form-group input.xu-form-group__control {
+                background-color: rgba(255, 59, 48, 0.2);
+                background-clip: content-box;
+            }
+            /* icon 클릭 영역 강조 */
+            .xu-form-group .xu-form-group__box .xu-form-group__icon {
+                background-color: rgba(0, 122, 255, 0.2);
+            }
+            section {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+    </block>
+</extends>

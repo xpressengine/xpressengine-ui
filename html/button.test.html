@@ -1,0 +1,45 @@
+<extends src="layout/_main-content.html">
+    <block name="head.title">Button - XE NEW Component</block>
+    <block name="body.main">
+        <h2>버튼의 조합 테스트</h2>
+        <section>
+            <h3><code>.xu-button__text</code> 생략</h3>
+            <button type="button" class="xu-button xu-button--primary xu-button--large">
+                <span class="xu-button__text">있는거</span>
+            </button>
+            <button type="button" class="xu-button xu-button--primary">
+                <span class="xu-button__text">있는거</span>
+            </button>
+            <button type="button" class="xu-button xu-button--primary  xu-button--small">
+                <span class="xu-button__text">있는거</span>
+            </button>
+            <!-- 생략 -->
+            <button type="button" class="xu-button xu-button--primary xu-button--small">없는거</button>
+            <button type="button" class="xu-button xu-button--primary">없는거</button>
+            <button type="button" class="xu-button xu-button--primary xu-button--large">없는거</button>
+            <hr>
+            <button type="button" class="xu-button xu-button--primary xu-button--large">
+                    <span class="xu-button__text">있는거</span>
+                </button>
+                <button type="button" class="xu-button xu-button--primary">
+                    <span class="xu-button__text">있는거</span>
+                </button>
+                <button type="button" class="xu-button xu-button--primary  xu-button--small">
+                    <span class="xu-button__text">있는거</span>
+                </button>
+                <br>
+                <!-- 생략 -->
+                <button type="button" class="xu-button xu-button--primary xu-button--large">없는거</button>
+                <button type="button" class="xu-button xu-button--primary">없는거</button>
+                <button type="button" class="xu-button xu-button--primary xu-button--small">없는거</button>
+        </section>
+
+        <style>
+            section {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+    </block>
+</extends>

@@ -93,7 +93,7 @@ const taskPosthtml = function () {
     require('posthtml-include')(options)
   ]
 
-  return src(['html/*.html', '!**/_*.html', ...ignore])
+  return src(['html/**/*.html', '!**/_*.html', ...ignore])
     .pipe($.posthtml(plugins))
     .pipe(dest('dist/preview'))
 }

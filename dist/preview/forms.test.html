@@ -190,7 +190,8 @@
         </section>
 
         <section>
-            <h3>padding을 제외한 input 영역(빨강)과 icon 클릭 영역(파랑) 강조</h3>
+            <h3>input + icon</h3>
+            <p>padding을 제외한 input 영역(빨강) 강조</p>
             <div class="xu-form-group">
                 <input type="text" class="xu-form-group__control" id="inputLabelVertical1" placeholder="placeholder 입니다.">
             </div>
@@ -200,6 +201,9 @@
             <div class="xu-form-group">
                 <input type="text" readonly="" class="xu-form-group__control" placeholder="placeholder 입니다." value="readonly 입니다.">
             </div>
+
+            <hr>
+            <p>icon 클릭 영역(파랑) 강조</p>
             <div class="xu-form-group">
                 <div class="xu-form-group__box xu-form-group__box--icon-right">
                     <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(버튼)과 함께">
@@ -232,12 +236,6 @@
                     <span class="xu-form-group__icon"><i class="xi-search"></i></span>
                 </div>
             </div>
-            <div class="xu-form-group xu-form-group--large">
-                <div class="xu-form-group__box xu-form-group__box--icon-right">
-                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(span)과 함께">
-                    <span class="xu-form-group__icon"><i class="xi-search"></i></span>
-                </div>
-            </div>
             <div class="xu-form-group">
                 <div class="xu-form-group__box xu-form-group__box--icon-left">
                     <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(span)과 함께">
@@ -248,6 +246,41 @@
                 <div class="xu-form-group__box xu-form-group__box--icon-left">
                     <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(span)과 함께">
                     <span class="xu-form-group__icon"><i class="xi-search"></i></span>
+                </div>
+            </div>
+
+            <hr>
+            <h4>아이콘 &amp; text + input</h4>
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-right">
+                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(button + text)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i>텍스트</button>
+                </div>
+            </div>
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-right">
+                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘에 이미지와 텍스트">
+                    <button type="button" class="xu-form-group__icon">
+                        <img src="https://www.xpressengine.io/plugins/official_homepage/Components/Themes/ThemeV3/assets/img/logo-xpressengine.svg"> 텍스트
+                    </button>
+                </div>
+            </div>
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-right">
+                    <input type="text" class="xu-form-group__control" placeholder="오른쪽 아이콘(span + text)과 함께">
+                    <span class="xu-form-group__icon"><i class="xi-search"></i> 텍스트</span>
+                </div>
+            </div>
+            <div class="xu-form-group">
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(button + text)과 함께">
+                    <button type="button" class="xu-form-group__icon"><i class="xi-search"></i>텍스트</button>
+                </div>
+            </div>
+            <div class="xu-form-group xu-form-group--large">
+                <div class="xu-form-group__box xu-form-group__box--icon-left">
+                    <span class="xu-form-group__icon"><i class="xi-search"></i> 텍스트</span>
+                    <input type="text" class="xu-form-group__control" placeholder="왼쪽 아이콘(span + text)과 함께">
                 </div>
             </div>
         </section>
@@ -263,8 +296,8 @@
                 background-color: rgba(0, 122, 255, 0.2);
             }
             section {
-                margin-bottom: 2rem;
-                padding-bottom: 2rem;
+                margin-bottom: 4rem;
+                padding-bottom: 4rem;
                 border-bottom: 1px solid #ddd;
             }
         </style>

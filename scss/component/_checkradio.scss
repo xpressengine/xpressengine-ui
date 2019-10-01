@@ -316,15 +316,15 @@
     // 체크박스
     input[type="checkbox"] {
       + .#{$prefix}-label-checkradio__helper {
-        border-color: $N40;
+        border-color: $N50;
         background-color: $N20;
       }
     }
 
     input[type="checkbox"]:checked {
       + .#{$prefix}-label-checkradio__helper {
-        border-color: $N40;
-        background-color: $N40;
+        border-color: $N50;
+        background-color: $N50;
 
         &::after {
           content: '';
@@ -337,19 +337,19 @@
     // 라디오 버튼
     input[type="radio"] {
       + .#{$prefix}-label-checkradio__helper {
-        border-color: $N40;
+        border-color: $N50;
         background-color: $N20;
       }
     }
 
     input[type="radio"]:checked {
       + .#{$prefix}-label-checkradio__helper {
-        border-color: $N40;
+        border-color: $N50;
         background-color: $N0;
 
         &::after {
           content: '';
-          background-color: $N40;
+          background-color: $N50;
         }
       }
     }

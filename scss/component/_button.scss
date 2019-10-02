@@ -198,13 +198,13 @@
       color: #fff !important;
     }
 
-    &:first-child {
+    &:first-of-type {
       margin-left: 0;
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
     }
 
-    &:last-child {
+    &:last-of-type {
       margin-right: 0;
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;

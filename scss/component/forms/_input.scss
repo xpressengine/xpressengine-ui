@@ -212,9 +212,7 @@
 
 // 폼 개선
 .#{$prefix}-form-group {
-  + .#{$prefix}-form-group {
-    margin-top: 20px;
-  }
+  margin-bottom: 1.5rem;
 
   input::-ms-clear {
     display: none;
